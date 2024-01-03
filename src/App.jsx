@@ -9,29 +9,51 @@ function App() {
 	const [allCategory, setAllCategory] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [serchWord, setSerchWord] = useState("");
+	const [showCategory, setShowCategory] = useState([]);
 
 	const VALUE = import.meta.env.VITE_API_KEY;
 	const INITIAL_CATEGORY_URL = `https://app.rakuten.co.jp/services/api/Recipe/CategoryList/20170426?format=json&applicationId=${VALUE}`;
 	const INITIAL_RANKING_URL = `https://app.rakuten.co.jp/services/api/Recipe/Ranking/20170426?format=json&applicationId=${VALUE}`;
-	console.log(INITIAL_CATEGORY_URL);
 	useEffect(() => {
 		const fetchCategoryData = async () => {
 			// 楽天APIデータを取得
 			let res = await getAllCategory(INITIAL_CATEGORY_URL);
-			// //
-			// loadPokemon(res.results);
-			// // console.log(res.next);
-			// setPrevURL(res.previous);
-			// setNextURL(res.next);
-			// setLoading(false);
-			console.log(res);
-			setAllCategory(res.result.small);
-			console.log("categoryList:" + allCategory);
+
+			console.log("res: " + res);
+			setAllCategory(res.result);
+			console.log("allCategory:" + allCategory);
 			setLoading(false);
 		};
 
 		fetchCategoryData();
 	}, []);
+
+	useEffect(() => {
+		const getSerchCategory = (allCategory, serchWord) => {
+			if (allCategory.length == 0) {
+				return;
+			}
+			console.log(allCategory);
+			const selectedLargeCategory = allCategory.large.filter(
+				(category) => category.categoryName === serchWord
+			);
+			const selectedMediumCategory = allCategory.medium.filter(
+				(category) => category.categoryName === serchWord
+			);
+			const selectedSmallCategory = allCategory.small.filter(
+				(category) => category.categoryName === serchWord
+			);
+			const serectedCategory = [
+				...selectedLargeCategory,
+				...selectedMediumCategory,
+				...selectedSmallCategory,
+			];
+
+			console.log(serectedCategory);
+			setShowCategory(serectedCategory);
+		};
+		getSerchCategory(allCategory, serchWord);
+	}, [serchWord, allCategory]);
 
 	return (
 		<>
@@ -39,6 +61,7 @@ function App() {
 			<CategoryList
 				loading={loading}
 				allCategory={allCategory}
+				showCategory={showCategory}
 				setSerchWord={setSerchWord}
 			></CategoryList>
 			<RankingList></RankingList>
