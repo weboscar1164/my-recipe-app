@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react";
-import { getAllrecipe } from "./utils/recipe";
+import { getAllCategory } from "./utils/recipe";
 import "./App.css";
+import CategoryList from "./components/CategoryList";
+import Header from "./components/Header";
+import RankingList from "./components/RankingList";
 
 function App() {
-	const PARAMETER = "applicationId";
-	const VALUE = "1006516241708194777";
-	const INITIAL_URL = `https://app.rakuten.co.jp/services/api/Recipe/CategoryList/20170426?${PARAMETER}=${VALUE}`;
+	const [allCategory, setAllCategory] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [serchWord, setSerchWord] = useState("");
 
+	const VALUE = import.meta.env.VITE_API_KEY;
+	const INITIAL_CATEGORY_URL = `https://app.rakuten.co.jp/services/api/Recipe/CategoryList/20170426?format=json&applicationId=${VALUE}`;
+	const INITIAL_RANKING_URL = `https://app.rakuten.co.jp/services/api/Recipe/Ranking/20170426?format=json&applicationId=${VALUE}`;
+	console.log(INITIAL_CATEGORY_URL);
 	useEffect(() => {
-		const fetchRecipeData = async () => {
+		const fetchCategoryData = async () => {
 			// 楽天APIデータを取得
-			let res = await getAllrecipe(INITIAL_URL);
+			let res = await getAllCategory(INITIAL_CATEGORY_URL);
 			// //
 			// loadPokemon(res.results);
 			// // console.log(res.next);
@@ -18,14 +25,24 @@ function App() {
 			// setNextURL(res.next);
 			// setLoading(false);
 			console.log(res);
+			setAllCategory(res.result.small);
+			console.log("categoryList:" + allCategory);
+			setLoading(false);
 		};
 
-		fetchRecipeData();
+		fetchCategoryData();
 	}, []);
 
 	return (
 		<>
-			<h1>hello react</h1>
+			<Header></Header>
+			<CategoryList
+				loading={loading}
+				allCategory={allCategory}
+				setSerchWord={setSerchWord}
+			></CategoryList>
+			<RankingList></RankingList>
+			<div></div>
 		</>
 	);
 }

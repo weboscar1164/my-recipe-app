@@ -1,0 +1,1520 @@
+[
+	{
+		"id": "1",
+		"name": "ぶた大根",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "大根", "quantity": { "amount": 0.5, "unit": "本" } },
+			{
+				"name": "豚肉（コマor薄切り）",
+				"quantity": { "amount": 200, "unit": "g" }
+			},
+			{ "name": "だしの素", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "★みりん", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★酒", "quantity": { "amount": 3, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "醤油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "サラダ油", "quantity": { "amount": 3, "unit": "大さじ" } },
+			{ "name": "水", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"大根はむいて一口大の乱切り　豚肉も食べやすい大きさに切る",
+			"鍋にサラダ油を熱し、大根、豚肉を炒める",
+			"全体的に油が回ったら水・だしの素を入れる（大根が隠れるくらい",
+			"沸騰したら★の調味料を入れて落し蓋をし、大根が軟らかくなるまで煮る",
+			"弱火にし、醤油を加えて５～10分煮る",
+			"※少し冷ますと味がしみこむ"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "2",
+		"name": "豆腐ハンバーグ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚ひき肉", "quantity": { "amount": 200, "unit": "g" } },
+			{ "name": "豆腐", "quantity": { "amount": 0.5, "unit": "丁" } },
+			{ "name": "玉ねぎ", "quantity": { "amount": 1, "unit": "個" } },
+			{ "name": "パン粉", "quantity": { "amount": 1, "unit": "カップ" } },
+			{ "name": "卵", "quantity": { "amount": 1, "unit": "個" } },
+			{ "name": "塩コショウ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "★醤油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★みりん", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 2, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"玉ねぎをみじん切りにし、透き通るまで炒めて冷ましておく",
+			"絹豆腐ならば軽く水切り",
+			"材料をすべてよく混ぜる。よくこねて形成する",
+			"フライパンに油をしき、焦げ目をつけながらひっくり返して火を通す",
+			"★の材料をフライパンに入れ、全体にソースを絡める"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "3",
+		"name": "きんぴらごぼう",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "洗いごぼう", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "にんじん", "quantity": { "amount": 100, "unit": "g" } },
+			{ "name": "ごま油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★酒", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 0.5, "unit": "大さじ" } },
+			{ "name": "★みりん", "quantity": { "amount": 0.5, "unit": "大さじ" } },
+			{ "name": "★醤油", "quantity": { "amount": 1, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"ごぼうをたわしで洗う",
+			"長さ5㎝、厚さ2～3㎜の斜め切りにしてから細切りにする",
+			"水につけてあく抜き（水が黒くなってから5分くらい　水は取り替えない）",
+			"人参もごぼうと同くらいの大きさに切る",
+			"ごぼうを水から上げたら水気をしっかり切り、ごま油をしいたフライパンでにんじんといっしょに炒める",
+			"★を入れて汁けがなくなるまで炒める",
+			"冷まして味をしみこませる"
+		],
+		"tags": ["副菜"]
+	},
+	{
+		"id": "4",
+		"name": "ぶたのさっぱり焼き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚ロース肉", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "片栗粉", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "サラダ油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{
+				"name": "キャベツ",
+				"quantity": { "amount": null, "unit": "適量（千切り）" }
+			},
+			{ "name": "酢", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★醤油", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★酒", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★水", "quantity": { "amount": null, "unit": "少々" } },
+			{
+				"name": "ショウガ（すりおろし）",
+				"quantity": { "amount": null, "unit": "少々" }
+			},
+			{
+				"name": "ニンニク（すりおろし）",
+				"quantity": { "amount": null, "unit": "少々" }
+			}
+		],
+		"instructions": [
+			"豚肉は食べやすい大きさに切り、片栗粉をまぶす",
+			"キャベツを千切りにして器に敷く",
+			"フライパンにサラダ油を熱し、豚肉を入れて焼き色がつくまで焼く",
+			"★を混ぜ合わせ、フライパンに加えて煮立たせて、最後に酢を加えてからませる",
+			"器に盛り付けて、煮汁を全体にかける"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "5",
+		"name": "鶏のさっぱり煮",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "手羽元", "quantity": { "amount": 12, "unit": "本" } },
+			{ "name": "ゆで卵", "quantity": { "amount": 4, "unit": "個" } },
+			{
+				"name": "ブロッコリー",
+				"quantity": { "amount": null, "unit": "適量" }
+			},
+			{ "name": "ショウガ", "quantity": { "amount": 20, "unit": "g" } },
+			{ "name": "ニンニク", "quantity": { "amount": 2, "unit": "片" } },
+			{ "name": "酢", "quantity": { "amount": 0.5, "unit": "カップ" } },
+			{ "name": "醤油", "quantity": { "amount": 0.5, "unit": "カップ" } },
+			{ "name": "水", "quantity": { "amount": 1, "unit": "カップ" } },
+			{ "name": "砂糖", "quantity": { "amount": 6, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"手羽元は水けをふいておく",
+			"ショウガは皮付きのまま薄切り、ニンニクは軽くつぶしておく",
+			"鍋に調味料とショウガ、ニンニクを入れ煮立たせる",
+			"煮立ったら手羽元と殻をむいたゆで卵を入れ、ふたをして中火で煮汁が1/2～1/3になるまで20分ほど煮込む",
+			"ゆでたブロッコリーを添えて器に盛る"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "6",
+		"name": "鶏のねぎマヨポン炒め",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{
+				"name": "鶏肉（もも、むね）",
+				"quantity": { "amount": 2, "unit": "枚" }
+			},
+			{ "name": "片栗粉", "quantity": { "amount": null, "unit": "適量" } },
+			{
+				"name": "マヨネーズ（炒め用）",
+				"quantity": { "amount": 2, "unit": "大さじ" }
+			},
+			{
+				"name": "マヨネーズ（味付け用）",
+				"quantity": { "amount": 1, "unit": "大さじ" }
+			},
+			{ "name": "青ネギ", "quantity": { "amount": 1, "unit": "本" } },
+			{ "name": "ポン酢", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "★塩こしょう", "quantity": { "amount": "多め", "unit": null } },
+			{ "name": "★酒", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★醤油", "quantity": { "amount": 1, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"鶏肉を食べやすい大きさに切って★をもみこんで10分ほどおく",
+			"片栗粉をまぶして１分ほど置く",
+			"フライパンにマヨネーズを入れてから火にかけ、マヨネーズが溶けてきたら鶏肉を入れる",
+			"強めの中火にして肉の表面を焼く。焦げ目がついたら火を弱め、ふたをして中まで火を通す",
+			"マヨネーズ（味付け用）とポン酢、青ネギを加えてさっと混ぜる",
+			"表面をしっかりと焼いてから蒸し焼きにするとジューシーに仕上がる"
+		],
+		"tags": ["主菜"]
+	},
+
+	{
+		"id": "7",
+		"name": "塩昆布の炊き込みご飯",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "米", "quantity": { "amount": 2, "unit": "合" } },
+			{ "name": "塩昆布", "quantity": { "amount": 20, "unit": "g" } },
+			{ "name": "にんじん", "quantity": { "amount": 0.5, "unit": "本" } },
+			{ "name": "ツナ缶", "quantity": { "amount": 1, "unit": "缶" } },
+			{ "name": "しめじ", "quantity": { "amount": 1, "unit": "袋" } },
+			{ "name": "酒", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "醤油", "quantity": { "amount": 1, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"人参は太めの千切り、しめじはほぐし、ツナ缶は軽く油をきる",
+			"材料すべてを炊飯器に入れ、炊飯する。材料の水の分だけ若干水加減を調整する"
+		],
+		"tags": ["主食"]
+	},
+
+	{
+		"id": "8",
+		"name": "ピーマンのツナ豆腐詰め照り煮",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "ピーマン", "quantity": { "amount": 10, "unit": "個" } },
+			{ "name": "木綿豆腐", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "ツナ缶", "quantity": { "amount": 2, "unit": "缶" } },
+			{ "name": "★溶き卵", "quantity": { "amount": 0.5, "unit": "個分" } },
+			{ "name": "★砂糖", "quantity": { "amount": 0.5, "unit": "大さじ" } },
+			{ "name": "★塩", "quantity": { "amount": 0.25, "unit": "小さじ" } },
+			{
+				"name": "★すりおろし生姜",
+				"quantity": { "amount": 3, "unit": "小さじ" }
+			},
+			{ "name": "★片栗粉", "quantity": { "amount": 6, "unit": "大さじ" } },
+			{ "name": "☆水", "quantity": { "amount": 200, "unit": "㏄" } },
+			{ "name": "☆めんつゆ", "quantity": { "amount": 100, "unit": "㏄" } }
+		],
+		"instructions": [
+			"ピーマンは半分に切り種を取る",
+			"豆腐は皿に入れラップをせずに600wで5分レンジ加熱して水切りをする",
+			"ボウルに豆腐を入れつぶし、ツナと★の調味料を加えて混ぜ合わせる",
+			"ピーマンにつぶした豆腐をこんもりと詰める",
+			"熱したフライパンに大さじ1程度の体油を入れて中火でツナ豆腐がわを下にして焼いていき、焼き色がついたら返して☆を加えて落し蓋をして弱火でピーマンが軟らかくなるまで煮ていく",
+			"ピーマンが煮えたら再度返してツナ豆腐側に味をしみこませながら煮詰める"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "9",
+		"name": "残りご飯でコンソメリゾット",
+		"serving": "2",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "ご飯", "quantity": { "amount": 2, "unit": "杯" } },
+			{ "name": "玉ねぎ", "quantity": { "amount": 0.5, "unit": "個" } },
+			{ "name": "にんじん", "quantity": { "amount": 0.5, "unit": "本" } },
+			{
+				"name": "ひき肉（豚or合い挽き）",
+				"quantity": { "amount": 100, "unit": "g" }
+			},
+			{ "name": "コンソメ", "quantity": { "amount": 1, "unit": "個" } },
+			{
+				"name": "クレイジーソルト",
+				"quantity": { "amount": null, "unit": "適量" }
+			},
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": 1, "unit": "大さじ" }
+			},
+			{ "name": "水", "quantity": { "amount": 300, "unit": "㏄" } }
+		],
+		"instructions": [
+			"たまねぎ、にんじんは粗めのみじん切りにする。",
+			"鍋にオリーブオイルを入れて熱し、たまねぎ、にんじんを炒める。",
+			"ひき肉を入れてさらに炒め、色が変わったらクレイジーソルトを一つまみ入れて軽く下味をつける。",
+			"水とコンソメを入れて野菜が柔らかくなるまで軽く煮る。※水が少なくなったら適宜足す。",
+			"ごはんを入れたら混ぜながら一煮たちさせ、最後にお好みでクレイジーソルトで味を整える。※肉類はベーコン等でも代用可。チーズを足してもおいしい。"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": "10",
+		"name": "鶏むねの甘酢からめ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "鶏むね", "quantity": { "amount": 2, "unit": "枚" } },
+			{ "name": "★酒", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★醤油", "quantity": { "amount": 0.5, "unit": "大さじ" } },
+			{
+				"name": "★にんにくすりおろし",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			},
+			{ "name": "★塩コショウ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "小麦粉", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "片栗粉", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "☆醤油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "☆みりん・酒", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "☆砂糖・酢", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "キャベツ", "quantity": { "amount": null, "unit": "お好み" } }
+		],
+		"instructions": [
+			"鶏肉を一口大にカットし、★といっしょに袋に入れてもみこむ",
+			"☆を合わせて準備",
+			"下味をつけた鶏肉を小麦粉と片栗粉にまぶし、油をしいたフライパンで焼く",
+			"酒大1をふってふたをし、弱火で3分おく",
+			"☆の甘酢を絡めてキャベツをしいた皿に盛る"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "11",
+		"name": "ぶたのさっぱり焼き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚ロース肉", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "片栗粉", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "サラダ油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "キャベツ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "酢", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★醤油", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★酒", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★水", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "★しょうが", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "★にんにく", "quantity": { "amount": null, "unit": "少々" } }
+		],
+		"instructions": [
+			"豚肉は食べやすい大きさに切り、片栗粉をまぶす",
+			"キャベツを千切りにし、器にしく",
+			"フライパンにサラダ油を熱し、豚肉を焼き色がつくまで両面を焼く",
+			"★を混ぜ合わせ、フライパンに加えて煮立たせ、最後に酢を加えてからませる",
+			"器に豚肉を盛り付け、煮汁を全体にかける"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "12",
+		"name": "青椒肉絲",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚肉", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "ピーマン", "quantity": { "amount": 5, "unit": "個" } },
+			{ "name": "★醤油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★ごま油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★塩胡椒", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "★片栗粉", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "酒", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "砂糖", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{
+				"name": "オイスターソース",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			}
+		],
+		"instructions": [
+			"豚肉は細切りにして★といっしょに袋に入れ、もみこむ",
+			"ピーマンは細切りにする",
+			"フライパンに豚肉を入れ、焼き色がついたらピーマンを入れる",
+			"酒、砂糖、オイスターソースを入れて数分炒める"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "13",
+		"name": "ポテトとしめじのマヨネーズ炒め",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "じゃがいも", "quantity": { "amount": 2, "unit": "個" } },
+			{ "name": "しめじ", "quantity": { "amount": 1, "unit": "パック" } },
+			{ "name": "しお", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "コショウ", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "マヨネーズ", "quantity": { "amount": 8, "unit": "小さじ" } },
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": 4, "unit": "小さじ" }
+			},
+			{
+				"name": "パセリ（あれば）",
+				"quantity": { "amount": null, "unit": "適量" }
+			}
+		],
+		"instructions": [
+			"じゃがいもは皮をむき乱切りにして水にさらす。水分がついたままラップにくるんでレンジで2分半から3分加熱する",
+			"フライパンに油を熱し熱したじゃがいもを入れて表面がカリッとするまで炒め、石づきをカットしてほぐしたしめじを加える",
+			"強火で炒め合わせて塩、コショウ、マヨネーズを加えて火を弱める。調味料がなじんだら火を止めパセリを加える。"
+		],
+		"tags": ["副菜"]
+	},
+
+	{
+		"id": "14",
+		"name": "マーボー春雨",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{
+				"name": "豚ひき肉",
+				"quantity": { "amount": 80, "unit": "g", "maxAmount": 100 }
+			},
+			{
+				"name": "春雨（乾燥）",
+				"quantity": { "amount": 50, "unit": "g" }
+			},
+			{ "name": "ピーマン", "quantity": { "amount": 2, "unit": "個" } },
+			{ "name": "★長ネギ", "quantity": { "amount": 0.5, "unit": "本" } },
+			{ "name": "★ニンニク", "quantity": { "amount": 1, "unit": "かけ" } },
+			{ "name": "★生姜", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "サラダ油", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "☆水", "quantity": { "amount": 0.66, "unit": "カップ" } },
+			{
+				"name": "☆中華スープの素",
+				"quantity": { "amount": 0.5, "unit": "小さじ" }
+			},
+			{ "name": "☆醤油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "☆酒", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "☆砂糖", "quantity": { "amount": 0.5, "unit": "小さじ" } },
+			{ "name": "☆豆板醤", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "片栗粉", "quantity": { "amount": null, "unit": "適宜" } },
+			{ "name": "水", "quantity": { "amount": null, "unit": "適宜" } }
+		],
+		"instructions": [
+			"春雨は熱湯に1分浸して固めに戻し、水けをきる。",
+			"ピーマンは細切りにして、★は粗みじん切り、☆は混ぜ合わせる",
+			"フライパンにサラダ油を熱し★を入れ、香りが出たらひき肉を加えてほぐしながら炒め、ぽろぽろになったらピーマンを炒め合わせる",
+			"春雨と☆を加えて、混ぜながら春雨が色づくまで煮て、水溶き片栗粉でとろみを加える"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "15",
+		"name": "すし飯",
+		"serving": "4",
+		"unit": "合",
+		"ingredients": [
+			{ "name": "砂糖", "quantity": { "amount": 52, "unit": "g" } },
+			{ "name": "塩", "quantity": { "amount": 12, "unit": "g" } },
+			{ "name": "みりん", "quantity": { "amount": 20, "unit": "㏄" } },
+			{ "name": "酢", "quantity": { "amount": 95, "unit": "㏄" } }
+		],
+		"instructions": [
+			"小鍋ですべてをよく溶かす。沸騰ししなくてもすぐに溶ける。ご飯が炊けるまでに冷ましておく。",
+			"飯台に出したご飯にまんべんなくかけ、しゃもじで切るように混ぜる。うちわで冷まし濡れ布巾をかけておく。"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": "16",
+		"name": "長いもの豚肉巻き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚もも薄切り", "quantity": { "amount": 6, "unit": "枚" } },
+			{ "name": "醤油", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "マスタード", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "長いも", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "小麦粉", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "サラダ油", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★醤油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★酢", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{
+				"name": "付け合わせ野菜",
+				"quantity": { "amount": null, "unit": "適量" }
+			}
+		],
+		"instructions": [
+			"豚肉は半分の大きさに切り、長いもは5ミリ太さの拍子木切りにする",
+			"豚肉に醤油とマスタードを合わせたものをはけで薄く塗り、12等分にした長いもをのせて巻き、小麦粉をまぶす",
+			"フライパンにサラダ油を熱し、豚肉の巻き終わりを下にして焼き始め、転がしながら焼き色を付けて火を通す。★を混ぜ合わせて加え、味を絡ませて照りを出す。"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "17",
+		"name": "キャベツとツナの和風パスタ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "キャベツ", "quantity": { "amount": 6, "unit": "枚" } },
+			{ "name": "ツナ缶", "quantity": { "amount": 2, "unit": "個" } },
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": null, "unit": "適量" }
+			},
+			{ "name": "ニンニクチューブ", "quantity": { "amount": 3, "unit": "cm" } },
+			{ "name": "酒", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "醤油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "塩", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "コショウ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "パスタ", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "のり", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"鍋に湯を沸かし、塩大さじ１（分量外）を入れ、沸騰したお湯にパスタを入れゆでる",
+			"パスタをゆでながらソースを作る。フライパンにオリーブオイルを熱し、ニンニクチューブを入れる。塩、コショウで味を調える",
+			"パスタの湯で時間+１分の３～５分前にキャベツを入れ、一緒にゆでる",
+			"ゆで汁は取っておく",
+			"パスタがゆであがったら２のパスタソースに加え、中火で手早く混ぜる。ゆで汁で水分量を調整する",
+			"出来上がったら皿に盛り、のりを散らす"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": "18",
+		"name": "お手軽サーモンマリネ",
+		"serving": "2",
+		"unit": "人分",
+		"ingredients": [
+			{
+				"name": "スモークサーモン",
+				"quantity": { "amount": 100, "unit": "g" }
+			},
+			{ "name": "玉ねぎ", "quantity": { "amount": 0.25, "unit": "個" } },
+			{ "name": "塩", "quantity": { "amount": "ひとつまみ", "unit": null } },
+			{ "name": "砂糖", "quantity": { "amount": "2枚", "unit": null } },
+			{ "name": "レタス", "quantity": { "amount": 2, "unit": "枚" } },
+			{ "name": "★酢", "quantity": { "amount": "大2", "unit": null } },
+			{ "name": "★砂糖", "quantity": { "amount": "小2", "unit": null } },
+			{
+				"name": "★オリーブオイル",
+				"quantity": { "amount": "小2", "unit": null }
+			},
+			{
+				"name": "★塩、コショウ",
+				"quantity": { "amount": "少々", "unit": null }
+			}
+		],
+		"instructions": [
+			"玉ねぎは薄くスライスして5分水にさらし、砂糖・塩で1分もみ、10分くらい置く。",
+			"レタスは小さめにちぎっておく",
+			"★を上から順に混ぜ合わせ（オイルはゆっくりと）そこにサーモンをつけておく。玉ねぎができたらすべて和え、約20分おく"
+		],
+		"tags": ["副菜"]
+	},
+	{
+		"id": "19",
+		"category": "副菜",
+		"name": "伊達巻",
+		"serving": "1",
+		"unit": "本分",
+		"ingredients": [
+			{ "name": "卵", "quantity": { "amount": 4, "unit": "個" } },
+			{ "name": "はんぺん", "quantity": { "amount": 1, "unit": "枚" } },
+			{ "name": "はちみつ", "quantity": { "amount": 40, "unit": "g" } },
+			{ "name": "みりん", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "塩", "quantity": { "amount": null, "unit": "ひとつまみ" } },
+			{ "name": "醤油", "quantity": { "amount": 0.5, "unit": "小さじ" } },
+			{ "name": "だし汁", "quantity": { "amount": 2, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"材料すべてをフードプロセッサーに入れ、十分に攪拌する",
+			"オーブンシートを敷いた方に流し込む",
+			"200度に余熱したオーブンで10分、温度を180度に下げてさらに10分、焼き色がつくまで焼く",
+			"躍起色がついた側が外になるようすだれの上に置き、オーブンシートを外して巻く",
+			"すだれの上から4か所輪ゴムで止めて3時間程度冷蔵庫で冷ます",
+			"※市販の20㎝角の型でも作れるが厚みが出てしまい巻きずらい。凝乳パックで高さ2㎝ほどの型を作成する（あるもホイルをまく）と巻きやすい。"
+		]
+	},
+	{
+		"id": "20",
+		"category": "副菜",
+		"name": "栗きんとん",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "サツマイモ", "quantity": { "amount": 150, "unit": "g" } },
+			{ "name": "栗の甘露煮", "quantity": { "amount": 1, "unit": "瓶" } },
+			{
+				"name": "★砂糖・みりん",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			},
+			{
+				"name": "★砂糖・みりん",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			},
+			{ "name": "★塩", "quantity": { "amount": null, "unit": "ひとつまみ" } }
+		],
+		"instructions": [
+			"サツマイモの皮を厚めにむいてさいの目切りにし、切ったものから水にさらす。水が濁らなくなったらたっぷりの水とともにラップをかけ、レンジで10分加熱する",
+			"水を捨て栗の甘露煮のシロップ50gと★を加えてつぶす。栗を加えてラップをかけてレンジで2分加熱する",
+			"※余裕があれば芋は裏ごしする",
+			"※栗の甘露煮は栗75g＋シロップ75g＝150gを使用。分量は調整する。"
+		]
+	},
+	{
+		"id": "21",
+		"name": "豚バラブロックの昆布巻き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "水", "quantity": { "amount": 1, "unit": "カップ" } },
+			{ "name": "昆布(10cmx5cm)", "quantity": { "amount": 4, "unit": "本" } },
+			{ "name": "豚バラブロック", "quantity": { "amount": 200, "unit": "g" } },
+			{ "name": "醤油", "quantity": { "amount": 50, "unit": "cc" } },
+			{ "name": "酒", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "みりん", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "砂糖", "quantity": { "amount": 2, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"昆布はさっと水につけ、軟らかくする。豚バラブロックをまきやすい大きさに切り昆布で巻き、数か所につまようじを差し固定する",
+			"圧力なべにすべての調味料を入れ豚肉を漬け込み、圧力をかける。",
+			"圧力が抜けたらふたを開け、弱火～中火にかけ、照りがつくまで煮詰める",
+			"冷めたら昆布巻きを取り出し、ゆっくりとつまようじを外して食べやすい大きさに切る",
+			"※煮汁とともに冷蔵庫で寝かすと味がよりしみこむ。"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "22",
+		"name": "豚ロース肉のショウガみそ焼き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚ロース肉", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "玉ねぎ", "quantity": { "amount": 1, "unit": "個" } },
+			{ "name": "カット野菜", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "生姜", "quantity": { "amount": 2, "unit": "かけ" } },
+			{ "name": "サラダ油", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★酒", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 2, "unit": "小さじ" } },
+			{ "name": "★みそ", "quantity": { "amount": 2, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"豚肉は脂身と赤身の間に数か所切れ目を入れて筋切りをする",
+			"玉ねぎは細切りにする生姜は皮をむいてすりおろす",
+			"ボウルに★、しょうがを入れて混ぜる",
+			"フライパンに油をしき玉ねぎを炒める。透き通ってきたら豚肉を加えて焼き色を付ける。",
+			"合わせ調味料をフライパンに加えて味をからめる。"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "23",
+		"name": "じゃがいもピザ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "じゃがいも", "quantity": { "amount": 3, "unit": "個" } },
+			{
+				"name": "鶏ガラスープの素",
+				"quantity": { "amount": 1, "unit": "大さじ" }
+			},
+			{ "name": "片栗粉", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "塩・胡椒", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "ケチャップ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "ピザ用チーズ", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"じゃがいもは皮をむき、細切りにする",
+			"ビニール袋に片栗粉を入れ、刻んだじゃがいもを入れてよく振る",
+			"サラダ油を引いたフライパンにじゃがいもを平らに敷き蓋をし、焼き色がつくまで中火で焼く",
+			"焼き色がついたら裏返し、塩・胡椒・鶏ガラスープの素を振りかける",
+			"ケチャップを塗り、ピザ用チーズを散らして再び蓋をする",
+			"じゃがいもに火が通り、チーズが溶けたら完成"
+		],
+		"tags": ["副菜"]
+	},
+	{
+		"id": "24",
+		"name": "めんつゆとバターの和風パスタ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "パスタ", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "ウィンナー", "quantity": { "amount": 4, "unit": "本" } },
+			{ "name": "しめじ", "quantity": { "amount": 1, "unit": "株" } },
+			{ "name": "ほうれんそう", "quantity": { "amount": 1, "unit": "束" } },
+			{ "name": "ニンニク", "quantity": { "amount": 4, "unit": "かけ" } },
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": 6, "unit": "大さじ" }
+			},
+			{
+				"name": "めんつゆ（3倍濃縮）",
+				"quantity": { "amount": 8, "unit": "大さじ" }
+			},
+			{ "name": "バター", "quantity": { "amount": 20, "unit": "g" } },
+			{ "name": "塩・胡椒", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"パスタを表示通りの時間ゆでる",
+			"パスタをゆでている間にフライパンにオリーブオイルを入れ、スライスしたニンニクを入れて火をつける",
+			"ニンニクの香りがしてきたら、適度な大きさに切ったしめじ、ホウレンソウ、ウィンナーを入れて炒める",
+			"塩・胡椒で味をつけ、火を止めてからバターを入れて溶かしからめる",
+			"ゆであがったパスタを入れて強火でさっと炒めからめる",
+			"めんつゆを加えて全体に味がいきわたったら完成"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": 25,
+		"name": "ラム入りモツ鍋",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "モツ", "quantity": { "amount": 400, "unit": "g" } },
+			{
+				"name": "ラム肉",
+				"quantity": { "amount": 400, "unit": "g", "maxAmount": 600 }
+			},
+			{ "name": "キャベツ", "quantity": { "amount": 0.5, "unit": "玉" } },
+			{ "name": "きのこ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "もやし", "quantity": { "amount": 2, "unit": "袋" } },
+			{ "name": "にら", "quantity": { "amount": 1, "unit": "束" } },
+			{ "name": "焼肉のタレ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "ソース", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "酒", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "マロニー", "quantity": { "amount": 0.33, "unit": "袋" } },
+			{ "name": "ラーメン", "quantity": { "amount": 2, "unit": "玉" } }
+		],
+		"instructions": [
+			"鍋にモツが浸る程度に水を入れ、酒をふた回しほど入れて煮込む",
+			"モツが柔らかくなったらキャベツ、もやし、きのこ、マロニーを加え、かさが減るまで煮る",
+			"焼肉のたれとソースで味を整える（他の調味料でもOK）",
+			"ニラを加え更に煮込み、ニラに火が通ったらできあがり"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": 26,
+		"name": "鶏むねのハニーマスタードケチャップ煮込み",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "鶏むね", "quantity": { "amount": 2, "unit": "枚" } },
+			{ "name": "にんにく", "quantity": { "amount": 3, "unit": "片" } },
+			{ "name": "片栗粉", "quantity": { "amount": null, "unit": "適量" } },
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": 1, "unit": "大さじ" }
+			},
+			{ "name": "エリンギ", "quantity": { "amount": 1, "unit": "パック" } },
+			{ "name": "塩コショウ", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "☆はちみつ", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{
+				"name": "☆粒マスタード",
+				"quantity": { "amount": 2, "unit": "大さじ" }
+			},
+			{ "name": "☆ケチャップ", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "水", "quantity": { "amount": 180, "unit": "cc" } }
+		],
+		"instructions": [
+			"鶏肉は一口大にカット　エリンギは厚めにスライス　にんにくは縦半分にカット",
+			"鶏肉に片栗粉と塩コショウをまぶして熱したフライパンにオリーブオイルをひき、鶏肉の表面を軽く焼く",
+			"☆を混ぜて合わせ調味料を作り、材料と一緒に圧力鍋に入れる",
+			"強火で加圧して蒸気が出始めたら弱火で5分。",
+			"自然に圧力が抜けるまで待ち、蓋を開けて好みのとろみになるまで煮詰める"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": 27,
+		"name": "チキンとポテトのチーズ焼き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "鶏もも", "quantity": { "amount": 2, "unit": "枚" } },
+			{ "name": "じゃがいも", "quantity": { "amount": 2, "unit": "個" } },
+			{
+				"name": "シュレッドチーズ",
+				"quantity": { "amount": 100, "unit": "g" }
+			},
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": 2, "unit": "大さじ" }
+			},
+			{ "name": "塩こしょう", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "黒胡椒", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"鶏肉は一口大に切り、塩コショウをする。じゃがいもは皮をむき、１cm幅の半月切りにし、水にさらす",
+			"耐熱容器にじゃがいもを重ならないように並べて、水小さじ２をふる（分量外）。ふんわりラップをして電子レンジ600w約4分加熱する",
+			"フライパンにオリーブオイルをひき、鶏肉の皮面を下にして並べる",
+			"2分焼いたら裏返してフライパンの端に寄せる。空いたところにじゃがいもを並べて、時々裏返しながら3～4分焼く",
+			"全体に火が通ったら。シュレッドチーズを散らして弱火にして蓋をする、チーズが溶けたら黒胡椒をふってできあがり。"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": 28,
+		"name": "醤油ラーメン",
+		"serving": "1",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "中華麺", "quantity": { "amount": 1, "unit": "玉" } },
+			{ "name": "お湯", "quantity": { "amount": 500, "unit": "ml" } },
+			{ "name": "☆醤油", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{
+				"name": "☆鶏ガラスープの素",
+				"quantity": { "amount": 0.5, "unit": "小さじ" }
+			},
+			{
+				"name": "☆顆粒和風だし",
+				"quantity": { "amount": 0.5, "unit": "小さじ" }
+			},
+			{
+				"name": "☆すりおろし生姜",
+				"quantity": { "amount": 0.5, "unit": "小さじ" }
+			},
+			{
+				"name": "☆粗挽き黒こしょう",
+				"quantity": { "amount": 0.3, "unit": "小さじ" }
+			},
+			{ "name": "長ネギ", "quantity": { "amount": 5, "unit": "cm" } },
+			{ "name": "焼豚", "quantity": { "amount": 30, "unit": "g" } },
+			{ "name": "メンマ", "quantity": { "amount": 30, "unit": "g" } },
+			{ "name": "煮玉子", "quantity": { "amount": 0.5, "unit": "個" } },
+			{ "name": "のり", "quantity": { "amount": 2, "unit": "枚" } }
+		],
+		"instructions": [
+			"長ネギは小口切りにする",
+			"お湯を沸騰させた鍋に中華麺を入れ、表示の時間茹でたらザルに上げて水気を切る",
+			"器に☆、念頭を入れてよく混ぜ合わせる",
+			"麺を入れてトッピングを盛り付けて完成",
+			"お好みでごま油を足しても美味しい"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": 29,
+		"name": "ナスの煮浸し",
+		"serving": "2-3",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "なす", "quantity": { "amount": 3, "unit": "本" } },
+			{ "name": "生姜", "quantity": { "amount": 1, "unit": "片" } },
+			{
+				"name": "刻みネギ（あれば）",
+				"quantity": { "amount": null, "unit": "少々" }
+			},
+			{ "name": "油", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★だし汁", "quantity": { "amount": 250, "unit": "ml" } },
+			{ "name": "★しょうゆ", "quantity": { "amount": 3, "unit": "大さじ" } },
+			{ "name": "★みりん", "quantity": { "amount": 2.33, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 1, "unit": "小さじ" } }
+		],
+		"instructions": [
+			"なすはヘタを切り落として半分に切り、浅く切り込みを入れる。さらに半分に切って水にさらす",
+			"油を引いたフライパンに刻んだ生姜を入れて香りが立つまで加熱して一度火を止める",
+			"水を切ったなすを皮からのせ火をつけ、焼き目がつくまで焼く",
+			"ひっくり返して火を通し、★印を混ぜた調味料を加えて沸騰させる"
+		],
+		"tags": ["副菜"]
+	},
+	{
+		"id": 30,
+		"name": "簡単ピザ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "強力粉", "quantity": { "amount": 200, "unit": "g" } },
+			{ "name": "薄力粉", "quantity": { "amount": 50, "unit": "g" } },
+			{ "name": "砂糖", "quantity": { "amount": 20, "unit": "g" } },
+			{ "name": "ドライイースト", "quantity": { "amount": 3, "unit": "ｇ" } },
+			{ "name": "水", "quantity": { "amount": 150, "unit": "cc" } },
+			{ "name": "オリーブオイル", "quantity": { "amount": 20, "unit": "g" } },
+			{ "name": "塩", "quantity": { "amount": 0.5, "unit": "小さじ" } }
+		],
+		"instructions": [
+			"ボウルに塩、水、オリーブオイル以外の材料を入れて軽く混ぜる",
+			"水・オリーブオイルを入れてこね、まとまってきたら塩を入れてひとまとめにする",
+			"打ち粉をした台に移し、滑らかになるまでさらにこねる",
+			"生地を2等分してラップでくるみ、常温で15分ほど発酵させる",
+			"ラップを外してクッキングシート上で伸ばし、フォークで細かく穴をあける",
+			"具材を載せて250度のオーブンで10分ほど焼く"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": 31,
+		"name": "串なし焼き鳥",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "鶏もも", "quantity": { "amount": 600, "unit": "g" } },
+			{ "name": "長ネギ", "quantity": { "amount": 2, "unit": "本" } },
+			{ "name": "片栗粉", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★しょうゆ", "quantity": { "amount": 6, "unit": "大さじ" } },
+			{ "name": "★めんつゆ", "quantity": { "amount": 3, "unit": "大さじ" } },
+			{ "name": "★みりん", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★水", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★はちみつ", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★サラダ油", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "卵黄", "quantity": { "amount": 2, "unit": "個" } },
+			{ "name": "七味唐辛子", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"★の材料を混ぜ合わせておく",
+			"長ネギは4cmに切る　鶏肉は一口大に切る",
+			"鶏肉に片栗粉をまぶし、★のタレにいれて混ぜ合わせる",
+			"中火で熱したフライパンにサラダ油を引き、鶏肉と長ネギを入れて蓋をして焼く（タレはとっておく）",
+			"焼色がついたら蓋を外し、裏返して中火で焼く",
+			"残りのタレをかき混ぜて加えて中火で熱し、タレにとろみがついたら火から下ろす"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": 32,
+		"name": "豚肉のオイマヨ焼き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚肉", "quantity": { "amount": 160, "unit": "g" } },
+			{ "name": "山芋", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "片栗粉", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "薬味ネギ", "quantity": { "amount": 4, "unit": "本" } },
+			{ "name": "ごま油", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "塩コショウ", "quantity": { "amount": null, "unit": "少々" } },
+			{
+				"name": "★オイスターソース",
+				"quantity": { "amount": 2, "unit": "大さじ" }
+			},
+			{ "name": "★マヨネーズ", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★水", "quantity": { "amount": 1, "unit": "小さじ" } }
+		],
+		"instructions": [
+			"豚肉は食べやすい大きさに切る",
+			"山芋は皮をむき、4cm✕1cmの拍子切りにして片栗粉をまぶす",
+			"薬味ネギは小口切りにする",
+			"★を混ぜ合わせる",
+			"フライパンにごま油を入れて熱し、香りが立ったら山芋を重ならないように並べて焼く",
+			"山芋の全面に焼き色がついたら一方に寄せ、空いた場所で豚肉を炒める",
+			"豚肉に火が通ったら山芋と混ぜ合わせて塩コショウをふる",
+			"★を入れて混ぜ合わせ、火から下ろす"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": 33,
+		"name": "サーモンマリネ",
+		"serving": "2-3",
+		"unit": "人分",
+		"ingredients": [
+			{
+				"name": "スモークサーモン",
+				"quantity": { "amount": 100, "unit": "g" }
+			},
+			{ "name": "玉ねぎ", "quantity": { "amount": 0.25, "unit": "個" } },
+			{ "name": "レタス", "quantity": { "amount": 2, "unit": "枚" } },
+			{ "name": "★酢", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{
+				"name": "★オリーブオイル",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			},
+			{ "name": "★塩コショウ", "quantity": { "amount": null, "unit": "少々" } }
+		],
+		"instructions": [
+			"玉ねぎは薄くスライスして5分水にさらして水を切り、砂糖、塩を各ひとつまみ加えて1分もみ、10分くらい置く",
+			"レタスを小さめにちぎる",
+			"★を順に混ぜ合わせ、そこにサーモンをつけておく。",
+			"玉ねぎができたら全部あえ、約20分置く"
+		],
+		"tags": ["副菜"]
+	},
+	{
+		"id": 34,
+		"name": "鶏むねの甘酢がらめ",
+		"serving": "2-3",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "鶏むね肉", "quantity": { "amount": 1, "unit": "枚" } },
+			{ "name": "★酒", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★しょうゆ", "quantity": { "amount": 0.5, "unit": "大さじ" } },
+			{
+				"name": "★にんにくすりおろし",
+				"quantity": { "amount": 0.25, "unit": "小さじ" }
+			},
+			{ "name": "塩コショウ", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "小麦粉", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "片栗粉", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "※しょうゆ", "quantity": { "amount": 1.5, "unit": "大さじ" } },
+			{ "name": "※みりん", "quantity": { "amount": 1.5, "unit": "大さじ" } },
+			{ "name": "※酒", "quantity": { "amount": 1.5, "unit": "大さじ" } },
+			{ "name": "※砂糖", "quantity": { "amount": 1.5, "unit": "大さじ" } },
+			{ "name": "※米酢", "quantity": { "amount": 1.5, "unit": "大さじ" } },
+			{ "name": "キャベツ", "quantity": { "amount": null, "unit": "お好みで" } }
+		],
+		"instructions": [
+			"鶏肉を一口大に切って袋に入れ、★を入れてもみ込む",
+			"※を混ぜ合わせて甘酢タレを作っておく",
+			"小麦粉・片栗粉を混ぜた粉にまぶし、油をひいたフライパンで焼く",
+			"焼き目がついたら酒をふって弱火で3分ほど焼く",
+			"※を入れて混ぜ、照りが出たら火からおろす"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": 35,
+		"name": "ピーマンの豆腐肉詰め",
+		"serving": "4-5",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "ピーマン", "quantity": { "amount": 10, "unit": "個" } },
+			{ "name": "木綿豆腐", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "ツナ", "quantity": { "amount": 165, "unit": "g" } },
+			{ "name": "★溶き卵", "quantity": { "amount": 0.5, "unit": "個" } },
+			{ "name": "★砂糖", "quantity": { "amount": 0.25, "unit": "大さじ" } },
+			{ "name": "★塩", "quantity": { "amount": 0.25, "unit": "小さじ" } },
+			{
+				"name": "★すりおろし生姜",
+				"quantity": { "amount": 3, "unit": "小さじ" }
+			},
+			{ "name": "★片栗粉", "quantity": { "amount": 6, "unit": "大さじ" } },
+			{ "name": "※水", "quantity": { "amount": 200, "unit": "cc" } },
+			{ "name": "※めんつゆ", "quantity": { "amount": 100, "unit": "cc" } }
+		],
+		"instructions": [
+			"ピーマンを半分に切り棚を除いて水気を切っておく",
+			"豆腐を皿にいれてラップをせずに600wで5分レンジ加熱して水切りをしておく",
+			"ボウルに水切りをした豆腐を入れスマッシャーなどで潰してツナと★の材料を入れて",
+			"ピーマンにツナ入り豆腐を詰める",
+			"熱したフライパンで大さじ1程度のサラダ油を入れて中火で豆腐側から焼いていく。焼色がついたらひっくり返して焼き、※を入れたら蓋をしてピーマンが柔らかくなるまで煮る",
+			"ピーマンが煮えたら再度ひっくり返してツナ豆腐の側に味を染み込ませながら煮詰める"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": 36,
+		"name": "塩昆布で炊き込みご飯",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "米", "quantity": { "amount": 2.5, "unit": "合" } },
+			{ "name": "塩昆布", "quantity": { "amount": 30, "unit": "g" } },
+			{ "name": "にんじん", "quantity": { "amount": 0.5, "unit": "中本" } },
+			{ "name": "ツナ缶", "quantity": { "amount": 1, "unit": "缶" } },
+			{ "name": "しめじ（あれば）", "quantity": { "amount": 1, "unit": "袋" } },
+			{ "name": "酒", "quantity": { "amount": 1.5, "unit": "大さじ" } },
+			{ "name": "しょうゆ", "quantity": { "amount": 1.5, "unit": "大さじ" } }
+		],
+		"instructions": ["材料すべてを炊飯器に入れて炊く"],
+		"tags": ["主食"]
+	},
+	{
+		"id": 37,
+		"name": "長芋の豚肉巻き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚モモ薄切り", "quantity": { "amount": 6, "unit": "枚" } },
+			{ "name": "しょうゆ", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "マスタード", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "長芋", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "小麦粉", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "サラダ油", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "しょうゆ", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "砂糖", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "酢", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{
+				"name": "つけあわせ野菜",
+				"quantity": { "amount": null, "unit": "適量" }
+			}
+		],
+		"instructions": [
+			"豚肉は半分の大きさに切り、長芋は5mm太さの拍子切りにする",
+			"豚肉にしょうゆとマスタードをあわせたものを薄く塗り、12等分にした長芋をのせて巻き、小麦粉をまぶす",
+			"フライパンに油を熱し、豚肉の巻き終わりをしたにして焼きはじめ、転がしながら焼色を付けて火を通す。",
+			"合わせておいた調味料を加え、照りが出るまで焼く"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": 38,
+		"name": "キャベツとツナのかんたん和風パスタ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{
+				"name": "キャベツ",
+				"quantity": { "amount": "大4枚くらい", "unit": null }
+			},
+			{ "name": "ツナ缶", "quantity": { "amount": 2, "unit": "個" } },
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": "適量", "unit": null }
+			},
+			{
+				"name": "にんにくチューブ",
+				"quantity": { "amount": "2cm", "unit": null }
+			},
+			{ "name": "日本酒", "quantity": { "amount": "大1と1/2", "unit": null } },
+			{
+				"name": "しょうゆ",
+				"quantity": { "amount": "大1と1/2", "unit": null }
+			},
+			{ "name": "塩", "quantity": { "amount": "少々", "unit": null } },
+			{ "name": "こしょう", "quantity": { "amount": "少々", "unit": null } },
+			{ "name": "パスタ", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "のり", "quantity": { "amount": "適量", "unit": null } }
+		],
+		"instructions": [
+			"パスタを茹でる",
+			"同時にソースを作る。フライパンにオリーブオイルを熱し、にんにくチューブを入れる",
+			"香りが立ったらツナ、日本酒、しょうゆを入れて煮詰め塩コショウをふる",
+			"パスタの茹で上がり3～5分前にキャベツを入れ、いっしょに茹でる",
+			"茹で上がったらソースの中に入れ中火で手早く混ぜる",
+			"皿に盛り、のりを散らす"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": "38",
+		"name": "キャベツとツナのかんたん和風パスタ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "キャベツ", "quantity": { "amount": 4, "unit": "枚くらい" } },
+			{ "name": "ツナ缶", "quantity": { "amount": 2, "unit": "個" } },
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": null, "unit": "適量" }
+			},
+			{
+				"name": "にんにくチューブ",
+				"quantity": { "amount": null, "unit": "適量" }
+			},
+			{ "name": "日本酒", "quantity": { "amount": 1.5, "unit": "大さじ" } },
+			{ "name": "しょうゆ", "quantity": { "amount": 1.5, "unit": "大さじ" } },
+			{ "name": "塩", "quantity": { "amount": "少々", "unit": null } },
+			{ "name": "こしょう", "quantity": { "amount": "少々", "unit": null } },
+			{ "name": "パスタ", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "のり", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"パスタを茹でる",
+			"同時にソースを作る。フライパンにオリーブオイルを熱し、にんにくチューブを入れる",
+			"香りが立ったらツナ、日本酒、しょうゆを入れて煮詰め塩コショウをふる",
+			"パスタの茹で上がり3～5分前にキャベツを入れ、いっしょに茹でる",
+			"茹で上がったらソースの中に入れ中火で手早く混ぜる",
+			"皿に盛り、のりを散らす"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": "39",
+		"name": "豚ロース肉の生姜味噌焼き",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "豚ロース肉", "quantity": { "amount": 400, "unit": "g" } },
+			{ "name": "玉ねぎ", "quantity": { "amount": 1, "unit": "個" } },
+			{ "name": "カット野菜", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "生姜", "quantity": { "amount": 1, "unit": "かけ" } },
+			{ "name": "サラダ油", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★酒", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 2, "unit": "小さじ" } },
+			{ "name": "★味噌", "quantity": { "amount": 2, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"玉ねぎは細切りにする。しょうがは皮をむいてすりおろす",
+			"豚肉は筋を切っておく",
+			"ボウルに★、生姜を入れて混ぜる",
+			"油をひいたフライパンに豚肉を入れて焼き、焼き色がついたら火から下ろす",
+			"油をそのままにして玉ねぎを炒め、火が通ったら先程の豚肉を戻す",
+			"★の合わせ調味料を加え、なじませて火を止める"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "40",
+		"name": "しめじとほうれん草の和風パスタ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "パスタ", "quantity": { "amount": 400, "unit": "g" } },
+			{
+				"name": "ウインナー",
+				"quantity": { "amount": 4, "unit": "本", "maxAmount": 5 }
+			},
+			{ "name": "しめじ", "quantity": { "amount": 1, "unit": "株" } },
+			{ "name": "ほうれん草", "quantity": { "amount": 1, "unit": "束" } },
+			{ "name": "にんにく", "quantity": { "amount": 2, "unit": "かけ" } },
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": 3, "unit": "大さじ" }
+			},
+			{
+				"name": "めんつゆ（3倍濃縮）",
+				"quantity": { "amount": 4, "unit": "大さじ" }
+			},
+			{ "name": "バター", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "塩コショウ", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"パスタを表示通りに茹でる",
+			"同時にフライパンにオリーブオイルを入れてスライスしたにんにくを入れて火を付ける",
+			"香りが立ったらしめじ、ほうれん草。ウィンナーを入れ炒める",
+			"塩コショウで味をつけ、火を止めてからバターを入れて溶かし絡める",
+			"茹で上がったパスタを入れて強火でさっと具材と合わせる",
+			"めんつゆを入れて混ぜ、味が全体にいきわたったら火を止める"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": "41",
+		"name": "ザンギ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "鶏もも肉", "quantity": { "amount": 2, "unit": "枚" } },
+			{ "name": "塩コショウ", "quantity": { "amount": "適量", "unit": null } },
+			{ "name": "酒", "quantity": { "amount": "大2", "unit": null } },
+			{ "name": "みりん", "quantity": { "amount": "小1", "unit": null } },
+			{ "name": "砂糖", "quantity": { "amount": "小1", "unit": null } },
+			{ "name": "しょうゆ", "quantity": { "amount": "大2", "unit": null } },
+			{ "name": "ごま油", "quantity": { "amount": "小1", "unit": null } },
+			{
+				"name": "生姜すりおろし",
+				"quantity": { "amount": "小1", "unit": null }
+			},
+			{
+				"name": "にんにくすりおろし",
+				"quantity": { "amount": "お好みで", "unit": null }
+			},
+			{ "name": "片栗粉", "quantity": { "amount": "適量", "unit": null } },
+			{ "name": "揚げ油", "quantity": { "amount": "適量", "unit": null } }
+		],
+		"instructions": [
+			"鶏肉は一口大に切る",
+			"袋に入れて塩コショウをかけて手でもみこむ",
+			"残りの調味料も入れて1時間から一晩置く",
+			"余分な調味料を切り、片栗粉をまんべんなくまぶす",
+			"160度の油で揚げ、最後に温度を少し上げてカラリとさせる"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "42",
+		"name": "さつまいものオイマヨ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "さつまいも", "quantity": { "amount": 1, "unit": "本" } },
+			{ "name": "ベーコン", "quantity": { "amount": 2, "unit": "枚" } },
+			{
+				"name": "★オイスターソース",
+				"quantity": { "amount": 1, "unit": "大さじ" }
+			},
+			{ "name": "★マヨネーズ", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★しょうゆ", "quantity": { "amount": 3, "unit": "大さじ" } },
+			{
+				"name": "塩、粗挽き胡椒",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			},
+			{ "name": "中華風だし", "quantity": { "amount": 1, "unit": "本" } },
+			{ "name": "ベーコン", "quantity": { "amount": 2, "unit": "枚" } },
+			{ "name": "大さじ", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "大さじ", "quantity": { "amount": 3, "unit": "大さじ" } },
+			{ "name": "小さじ", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "適量", "quantity": null }
+		],
+		"instructions": [
+			"さつまいもは3mmくらいの輪切り、ベーコンは1cm程度に切る",
+			"フライパンに油を入れ、さつまいもを入れて弱火で中まで火を通す",
+			"さつまいもに火が通ったら端に寄せ、ベーコン、塩、粗挽き胡椒を入れ中火で火を通す",
+			"★を入れ絡める　お好みでごまを振る"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "42",
+		"name": "さつまいものオイマヨ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "さつまいも", "quantity": { "amount": null, "unit": "本" } },
+			{ "name": "ベーコン", "quantity": { "amount": 2, "unit": "枚" } },
+			{
+				"name": "★オイスターソース",
+				"quantity": { "amount": 1, "unit": "大さじ" }
+			},
+			{ "name": "★マヨネーズ", "quantity": { "amount": 3, "unit": "大さじ" } },
+			{ "name": "★しょうゆ", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{
+				"name": "塩、粗挽き胡椒",
+				"quantity": { "amount": null, "unit": "適量" }
+			}
+		],
+		"instructions": [
+			"さつまいもは3mmくらいの輪切り、ベーコンは1cm程度に切る",
+			"フライパンに油を入れ、さつまいもを入れて弱火で中まで火を通す",
+			"さつまいもに火が通ったら端に寄せ、ベーコン、塩、粗挽き胡椒を入れ中火で火を通す",
+			"★を入れ絡める　お好みでごまを振る"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "43",
+		"name": "バターいもきんぴら",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "さつまいも", "quantity": { "amount": null, "unit": "本" } },
+			{ "name": "バター", "quantity": { "amount": 3, "unit": "大さじ" } },
+			{ "name": "砂糖", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "しょうゆ", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "飾り用ごま", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"さつまいもは太めに切り、水にさらす",
+			"フライパンを熱し、バターを溶かして水切りしたさつまいもをいれて中火でじっくり火を通す",
+			"火が通ったら砂糖、しょうゆで味をつける"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "44",
+		"name": "かぼちゃグラタン",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "かぼちゃ", "quantity": { "amount": 0.25, "unit": "個" } },
+			{ "name": "玉ねぎ", "quantity": { "amount": 1, "unit": "個" } },
+			{ "name": "ベーコン", "quantity": { "amount": 4, "unit": "枚" } },
+			{ "name": "小麦粉", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "牛乳", "quantity": { "amount": 250, "unit": "cc" } },
+			{
+				"name": "オリーブオイル",
+				"quantity": { "amount": 2, "unit": "大さじ" }
+			},
+			{ "name": "塩コショウ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "ピザ用チーズ", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"かぼちゃをレンジで火を通す",
+			"鍋を熱してオリーブオイル全体になじませる。玉ねぎを炒めてしんなりしてきたらベーコンも入れて炒める",
+			"↑の鍋に小麦粉を振り入れる。全体に馴染んだら牛乳を3回位に分けて入れる。全体に混ざったら火を止める",
+			"火を通したかぼちゃをスプーンで少しずつくり抜き、↑の鍋に皮以外入れていく",
+			"かぼちゃを木べらなどで軽く潰したら、塩コショウで味を調える",
+			"耐熱皿に移しチーズを乗せて、230度のオーブンで25分焼く"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "45",
+		"name": "鶏チリ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "鶏むね肉", "quantity": { "amount": 2, "unit": "枚" } },
+			{ "name": "片栗粉", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "長ネギ", "quantity": { "amount": 1, "unit": "本" } },
+			{ "name": "★水", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★ケチャップ", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★酒", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★しょうゆ", "quantity": { "amount": 4, "unit": "大さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{
+				"name": "★鶏ガラスープ",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			},
+			{
+				"name": "○すりおろし生姜",
+				"quantity": { "amount": 1, "unit": "大さじ" }
+			},
+			{
+				"name": "○すりおろしにんにく",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			},
+			{ "name": "○豆板醤", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "ごま油", "quantity": { "amount": 4, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"長ネギはみじん切りにする",
+			"鶏むね肉は1センチのそぎ切りにし、片栗粉をまぶす",
+			"★の材料をボウルに混ぜておく",
+			"中火で熱したフライパンにごま油をひき、○を入れて炒め、香りが立ったら鶏むね肉を入れて焼く",
+			"鶏むね肉に火が通ったら、混ぜ合わせておいた★を入れてひと煮立ちさせ、とろみが付いたら刻んだ長ネギを入れ、全体になじんだら火から下ろす"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "46",
+		"name": "たこやき",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "★たこ焼き粉", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "★卵", "quantity": { "amount": 3, "unit": "個" } },
+			{ "name": "★水", "quantity": { "amount": 900, "unit": "cc" } },
+			{ "name": "長ネギ", "quantity": { "amount": 1, "unit": "本" } },
+			{ "name": "たこ（頭）", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "紅しょうが", "quantity": { "amount": 1, "unit": "袋" } },
+			{ "name": "天かす", "quantity": { "amount": null, "unit": "適量" } }
+		],
+		"instructions": [
+			"★をボウルに入れて泡立て器で混ぜる（粉が混ざればよい）",
+			"その他の材料はみじん切りにする",
+			"ホットプレートを250度にあたためて油を引き、★の生地を2/3ほど入れる",
+			"具材を入れて具材がかぶるくらいに生地を足し、生地が返せるくらいに固まったら数回に分けてひっくり返す",
+			"※真ん中と端では火の通るはやさが違うため、中心から返していく"
+		],
+		"tags": ["主食"]
+	},
+	{
+		"id": "47",
+		"name": "高野豆腐のひき肉詰め煮",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "高野豆腐", "quantity": { "amount": 4, "unit": "枚" } },
+			{ "name": "★鶏ひき肉", "quantity": { "amount": 150, "unit": "g" } },
+			{ "name": "★長ネギ", "quantity": { "amount": 30, "unit": "g" } },
+			{
+				"name": "★すりおろし生姜",
+				"quantity": { "amount": 1, "unit": "小さじ" }
+			},
+			{ "name": "★塩", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "★片栗粉", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "★料理酒", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "○水", "quantity": { "amount": 2, "unit": "カップ" } },
+			{ "name": "○だしの素", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "○砂糖", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{
+				"name": "★しょうゆ・みりん・酒",
+				"quantity": { "amount": 1, "unit": "大さじ" }
+			}
+		],
+		"instructions": [
+			"高野豆腐はぬるま湯につけて戻し、水気を切り半分に切る",
+			"真ん中に切れ目を入れて袋状にする",
+			"長ネギはみじん切りにする",
+			"★を混ぜ合わせる",
+			"高野豆腐に混ぜ合わせた★を詰める",
+			"鍋に○を入れ、火にかける",
+			"鍋に肉の面を上にして入れ、蓋をして弱火で２０分煮る"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "48",
+		"name": "刺し身の漬け汁",
+		"serving": "200",
+		"unit": "g",
+		"ingredients": [
+			{ "name": "★酒", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★みりん", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "しょうゆ", "quantity": { "amount": 2, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"分量は刺し身200gあたり。100g/大さじ1換算でよい",
+			"★を鍋に入れ煮切る。",
+			"あら熱を取り、醤油を足して切り身にした刺し身を漬け込む。",
+			"最短で３０分で食べられる。未開封なら冷蔵庫保管で３日は持つ。"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "49",
+		"name": "塩唐揚げ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "鶏もも肉", "quantity": { "amount": 600, "unit": "g" } },
+			{ "name": "片栗粉", "quantity": { "amount": 6, "unit": "大さじ" } },
+			{ "name": "サラダ油", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "★酒", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "★塩", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "★砂糖", "quantity": { "amount": 1, "unit": "小さじ" } },
+			{ "name": "★こしょう", "quantity": { "amount": null, "unit": "少々" } },
+			{ "name": "★おろしニンニク", "quantity": { "amount": 1, "unit": "cm" } },
+			{
+				"name": "★おろししょうが",
+				"quantity": { "amount": 0.5, "unit": "小さじ" }
+			}
+		],
+		"instructions": [
+			"鶏もも肉を一口大に切ってボールに入れ、味付けの調味料★を加えて揉み込み、10分ほど置く",
+			"漬け込んだ鶏肉に片栗粉を加えて混ぜ、1分くらいおいて熱した油で揚げる"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "50",
+		"name": "ヨシダソースで肉じゃが",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "じゃがいも", "quantity": { "amount": 3, "unit": "個" } },
+			{ "name": "にんじん", "quantity": { "amount": 1, "unit": "本" } },
+			{ "name": "たまねぎ", "quantity": { "amount": 1, "unit": "個" } },
+			{ "name": "豚こま肉", "quantity": { "amount": 200, "unit": "g" } },
+			{ "name": "水", "quantity": { "amount": 1, "unit": "カップ" } },
+			{ "name": "だし粉末", "quantity": { "amount": 2, "unit": "小さじ" } },
+			{
+				"name": "★ヨシダソース",
+				"quantity": { "amount": 3, "unit": "大さじ" }
+			},
+			{ "name": "★酒", "quantity": { "amount": 2, "unit": "大さじ" } },
+			{ "name": "★醤油", "quantity": { "amount": 1, "unit": "大さじ" } },
+			{ "name": "サラダ油", "quantity": { "amount": 1, "unit": "大さじ" } }
+		],
+		"instructions": [
+			"豚肉は2~3cmに切る",
+			"じゃがいも、にんじんは一口大、玉ねぎは厚めに切る",
+			"鍋にサラダ油を引き、豚肉を炒める。色が変わったらじゃがいも、にんじん、玉ねぎも加えて5分ほど炒める",
+			"水とだし粉末を入れて沸かしアクを取る",
+			"★の調味料を入れて落し蓋をして10分煮る",
+			"落し蓋を取りさらに10分ほど煮てじゃがいもに火が通ったら完成"
+		],
+		"tags": ["主菜"]
+	},
+	{
+		"id": "51",
+		"name": "パスティチオ",
+		"serving": "4",
+		"unit": "人分",
+		"ingredients": [
+			{ "name": "ペンネ", "quantity": { "amount": 300, "unit": "g" } },
+			{ "name": "牛ひき肉", "quantity": { "amount": 200, "unit": "g" } },
+			{ "name": "卵", "quantity": { "amount": 1, "unit": "個" } },
+			{ "name": "マリナーラソース", "quantity": { "amount": 1, "unit": "瓶" } },
+			{ "name": "バター", "quantity": { "amount": 25, "unit": "g" } },
+			{ "name": "玉ねぎ", "quantity": { "amount": 0.5, "unit": "個" } },
+			{ "name": "パセリ", "quantity": { "amount": null, "unit": "適量" } },
+			{ "name": "ベシャメルソース", "quantity": { "amount": 1, "unit": "缶" } }
+		],
+		"instructions": [
+			"玉ねぎとパセリを刻む",
+			"耐熱皿にオリーブオイルを塗る",
+			"ペンネを茹でる",
+			"フライパンにオリーブオイルを入れ、玉ねぎを炒める",
+			"玉ねぎがきつね色になったらひき肉とパセリを入れる",
+			"全体に火が通ったら卵を入れ混ぜる",
+			"マリナーラソースを半量入れて炒める",
+			"ペンネが茹で上がったらお湯を切ってバターをからめる",
+			"耐熱皿にペンネ→ミートソース→ペンネの順で入れる",
+			"ベシャメルソースをかけてオーブンで焼く"
+		],
+		"tags": ["主菜"]
+	}
+]

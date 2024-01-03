@@ -1,4 +1,4 @@
-export const getAllrecipe = (url) => {
+export const getAllCategory = (url) => {
 	return new Promise((resolve, reject) => {
 		fetch(url)
 			.then((res) => res.json())
