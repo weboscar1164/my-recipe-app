@@ -59,8 +59,14 @@ function App() {
 				...selectedSmallCategory,
 			];
 
+			const uniqueCategory = Array.from(
+				new Map(
+					serectedCategory.map((category) => [category.categoryName, category])
+				).values()
+			);
 			console.log(serectedCategory);
-			setShowCategory(serectedCategory);
+			console.log(uniqueCategory);
+			setShowCategory(uniqueCategory);
 		};
 		getSerchCategory(allCategory, searchWord);
 	}, [searchWord, allCategory]);
