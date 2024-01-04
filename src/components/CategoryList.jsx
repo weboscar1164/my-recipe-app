@@ -1,25 +1,35 @@
 import React from "react";
 
-const CategoryList = ({ loading, showCategory, setSearchWord }) => {
+const CategoryList = ({
+	showCategory,
+	setSearchWord,
+	setCurrentCategory,
+	getRankingCategoryNumber,
+}) => {
 	const onEditSerch = (value) => {
 		setSearchWord(value);
-		console.log(value);
+		// console.log(value);
+	};
+
+	const onCategoryClickHandler = (category) => {
+		const categoryNumber = getRankingCategoryNumber(category);
+		const getUrlCategory = { ...category, categoryNumber: categoryNumber };
+		setCurrentCategory(getUrlCategory);
 	};
 
 	const renderContent = () => {
-		if (
-			showCategory.length == 0
-			// Object.keys(showCategory.large).length == 0 &&
-			// Object.keys(showCategory.medium).length == 0 &&
-			// Object.keys(showCategory.small).length == 0
-		) {
-			return <h1>検索スペースに入力してください。</h1>;
+		if (showCategory.length == 0) {
+			return <h2>検索スペースに入力してください。</h2>;
 		} else {
 			return showCategory.map((category) => {
 				return (
-					<div className="app-category-list-card" key={category.categoryId}>
+					<li
+						className="app-category-list-card"
+						key={category.categoryId}
+						onClick={() => onCategoryClickHandler(category)}
+					>
 						<h3>{category.categoryName}</h3>
-					</div>
+					</li>
 				);
 			});
 		}
@@ -28,7 +38,7 @@ const CategoryList = ({ loading, showCategory, setSearchWord }) => {
 	return (
 		<div className="app-category-list-container">
 			<input type="text" onChange={(e) => onEditSerch(e.target.value)} />
-			{renderContent()}
+			<ul>{renderContent()}</ul>
 		</div>
 	);
 };
