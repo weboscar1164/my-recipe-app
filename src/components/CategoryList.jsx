@@ -1,8 +1,8 @@
 import React from "react";
 
-const CategoryList = ({ loading, showCategory, setSerchWord }) => {
+const CategoryList = ({ loading, showCategory, setSearchWord }) => {
 	const onEditSerch = (value) => {
-		setSerchWord(value);
+		setSearchWord(value);
 		console.log(value);
 	};
 
@@ -17,7 +17,7 @@ const CategoryList = ({ loading, showCategory, setSerchWord }) => {
 		} else {
 			return showCategory.map((category) => {
 				return (
-					<div className="app-category-list-card" key={category.categoryName}>
+					<div className="app-category-list-card" key={category.categoryId}>
 						<h3>{category.categoryName}</h3>
 					</div>
 				);

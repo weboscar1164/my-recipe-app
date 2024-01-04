@@ -8,7 +8,7 @@ import RankingList from "./components/RankingList";
 function App() {
 	const [allCategory, setAllCategory] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [serchWord, setSerchWord] = useState("");
+	const [searchWord, setSearchWord] = useState("");
 	const [showCategory, setShowCategory] = useState([]);
 
 	const VALUE = import.meta.env.VITE_API_KEY;
@@ -29,20 +29,30 @@ function App() {
 	}, []);
 
 	useEffect(() => {
-		const getSerchCategory = (allCategory, serchWord) => {
-			if (allCategory.length == 0) {
+		const getSerchCategory = (allCategory, searchWord) => {
+			if (!searchWord || allCategory.length === 0) {
+				setShowCategory([]);
 				return;
 			}
 			console.log(allCategory);
-			const selectedLargeCategory = allCategory.large.filter(
-				(category) => category.categoryName === serchWord
-			);
-			const selectedMediumCategory = allCategory.medium.filter(
-				(category) => category.categoryName === serchWord
-			);
-			const selectedSmallCategory = allCategory.small.filter(
-				(category) => category.categoryName === serchWord
-			);
+			const selectedLargeCategory = allCategory.large.filter((category) => {
+				return new RegExp(searchWord).test(category.categoryName);
+			});
+			const selectedMediumCategory = allCategory.medium.filter((category) => {
+				return new RegExp(searchWord).test(category.categoryName);
+			});
+			const selectedSmallCategory = allCategory.small.filter((category) => {
+				return new RegExp(searchWord).test(category.categoryName);
+			});
+			// const selectedLargeCategory = allCategory.large.filter(
+			// 	(category) => category.categoryName === searchWord
+			// );
+			// const selectedMediumCategory = allCategory.medium.filter(
+			// 	(category) => category.categoryName === searchWord
+			// );
+			// const selectedSmallCategory = allCategory.small.filter(
+			// 	(category) => category.categoryName === searchWord
+			// );
 			const serectedCategory = [
 				...selectedLargeCategory,
 				...selectedMediumCategory,
@@ -52,8 +62,8 @@ function App() {
 			console.log(serectedCategory);
 			setShowCategory(serectedCategory);
 		};
-		getSerchCategory(allCategory, serchWord);
-	}, [serchWord, allCategory]);
+		getSerchCategory(allCategory, searchWord);
+	}, [searchWord, allCategory]);
 
 	return (
 		<>
@@ -62,7 +72,7 @@ function App() {
 				loading={loading}
 				allCategory={allCategory}
 				showCategory={showCategory}
-				setSerchWord={setSerchWord}
+				setSearchWord={setSearchWord}
 			></CategoryList>
 			<RankingList></RankingList>
 			<div></div>
