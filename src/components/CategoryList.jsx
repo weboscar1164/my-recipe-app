@@ -1,6 +1,7 @@
 import React from "react";
 
 const CategoryList = ({
+	isEmpty,
 	showCategory,
 	setSearchWord,
 	setCurrentCategory,
@@ -11,26 +12,33 @@ const CategoryList = ({
 		// console.log(value);
 	};
 
-	const onCategoryClickHandler = (category) => {
-		const categoryNumber = getRankingCategoryNumber(category);
-		const getUrlCategory = { ...category, categoryNumber: categoryNumber };
+	const onCategoryClickHandler = (category, categoryType) => {
+		const categoryNumber = getRankingCategoryNumber(category, categoryType);
+		const getUrlCategory = {
+			...category,
+			categoryNumber: categoryNumber,
+			categoryType: categoryType,
+		};
+		console.log(getUrlCategory);
 		setCurrentCategory(getUrlCategory);
 	};
 
 	const renderContent = () => {
-		if (showCategory.length == 0) {
+		if (isEmpty(showCategory)) {
 			return <h2>検索スペースに入力してください。</h2>;
 		} else {
-			return showCategory.map((category) => {
-				return (
-					<li
-						className="app-category-list-card"
-						key={category.categoryId}
-						onClick={() => onCategoryClickHandler(category)}
-					>
-						<h3>{category.categoryName}</h3>
-					</li>
-				);
+			return Object.keys(showCategory).map((categoryType) => {
+				return showCategory[categoryType].map((category) => {
+					return (
+						<li
+							className="app-category-list-card"
+							key={category.categoryId}
+							onClick={() => onCategoryClickHandler(category, categoryType)}
+						>
+							<h3>{category.categoryName}</h3>
+						</li>
+					);
+				});
 			});
 		}
 	};

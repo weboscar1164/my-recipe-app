@@ -59,20 +59,32 @@ function App() {
 			// const selectedSmallCategory = allCategory.small.filter(
 			// 	(category) => category.categoryName === searchWord
 			// );
-			const serectedCategory = [
-				...selectedLargeCategory,
-				...selectedMediumCategory,
-				...selectedSmallCategory,
-			];
-
-			const uniqueCategory = Array.from(
-				new Map(
-					serectedCategory.map((category) => [category.categoryName, category])
-				).values()
+			const uniqueMedium = selectedMediumCategory.filter(
+				(mediumCategory) =>
+					!selectedSmallCategory.some(
+						(smallCategory) =>
+							smallCategory.categoryName === mediumCategory.categoryName
+					)
 			);
+			const uniqueLarge = selectedLargeCategory.filter(
+				(largeCategory) =>
+					!selectedMediumCategory.some(
+						(mediumCategory) =>
+							mediumCategory.categoryName === largeCategory.categoryName
+					)
+			);
+			const serectedCategory = {
+				large: uniqueLarge,
+				medium: uniqueMedium,
+				small: selectedSmallCategory,
+			};
+			// const uniqueCategory = Array.from(
+			// 	new Map(
+			// 		serectedCategory.map((category) => [category.categoryName, category])
+			// 	).values()
+			// );
 			console.log(serectedCategory);
-			console.log(uniqueCategory);
-			setShowCategory(uniqueCategory);
+			setShowCategory(serectedCategory);
 		};
 		getSerchCategory(allCategory, searchWord);
 	}, [searchWord, allCategory]);
@@ -81,7 +93,7 @@ function App() {
 		if (isEmpty(currentCategory)) {
 			return;
 		}
-		const INITIAL_RANKING_URL = `https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?applicationId=${VALUE}&categoryId=32-339`;
+		const INITIAL_RANKING_URL = `https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?applicationId=${VALUE}&categoryId=${currentCategory.categoryNumber}`;
 		const fetchRankingData = async () => {
 			// 楽天APIランキングデータを取得
 			let res = await getApiData(INITIAL_RANKING_URL);
@@ -94,22 +106,48 @@ function App() {
 		fetchRankingData();
 	}, [currentCategory]);
 
-	const getRankingCategoryNumber = (currentCategory) => {
-		return "32-339";
+	const getRankingCategoryNumber = (currentCategory, categoryType) => {
+		console.log(allCategory);
+		console.log(currentCategory);
+
+		if (categoryType === "large") {
+			return currentCategory.categoryId;
+		} else if (categoryType === "medium") {
+			const largeCategory = allCategory.large.find(
+				(_largeCategory) =>
+					currentCategory.parentCategoryId == _largeCategory.categoryId
+			);
+			return `${largeCategory.categoryId}-${currentCategory.categoryId}`;
+		} else if ((categoryType = "small")) {
+			const mediumCategory = allCategory.medium.find(
+				(_mediumCategory) =>
+					currentCategory.parentCategoryId == _mediumCategory.categoryId
+			);
+			console.log(mediumCategory);
+			const largeCategory = allCategory.large.find(
+				(_largeCategory) =>
+					mediumCategory.parentCategoryId == _largeCategory.categoryId
+			);
+			return `${largeCategory.categoryId}-${mediumCategory.categoryId}-${currentCategory.categoryId}`;
+		}
 	};
 
 	return (
 		<>
 			<Header></Header>
 			<CategoryList
+				isEmpty={isEmpty}
 				loading={loading}
 				allCategory={allCategory}
 				showCategory={showCategory}
 				setSearchWord={setSearchWord}
 				setCurrentCategory={setCurrentCategory}
 				getRankingCategoryNumber={getRankingCategoryNumber}
-			></CategoryList>
-			<RankingList></RankingList>
+			/>
+			<RankingList
+				currentCategory={currentCategory}
+				rankingList={rankingList}
+			/>
 			<div></div>
 		</>
 	);
