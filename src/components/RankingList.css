@@ -1,0 +1,48 @@
+.app-ranking-container {
+    padding-top: 150px;
+    padding-bottom: 60px;
+}
+
+.app-ranking-title {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.app-ranking-card {
+    padding: 15px;
+    background: #f1bf74;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: scale .3s;
+}
+
+.app-ranking-card:hover {
+    scale: 1.03;
+}
+
+.app-ranking-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.app-ranking-card a {
+    cursor: pointer;
+}
+
+.app-ranking-card-img {
+    width: 200px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 8px;
+} 
+
+.app-ranking-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.app-ranking-link {
+    text-decoration: underline;
+    text-align: right;
+}

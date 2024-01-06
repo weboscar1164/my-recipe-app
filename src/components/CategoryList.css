@@ -1,0 +1,23 @@
+.app-category-container {
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.app-category-card {
+    width: 100%;
+    padding: 10px 20px;
+    background: #f1bf74;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: scale .3s;
+}
+
+.app-category-card:hover {
+    scale: 1.03;
+}
+
+.none-list {
+    margin-top: 20px;
+    font-size: 18px;
+}

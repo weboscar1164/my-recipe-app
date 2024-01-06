@@ -1,22 +1,37 @@
-import React from "react";
+/** @jsxImportSource @emotion/react */
+import "./Header.css";
+import { useScrollDirection } from "../utils/useScrollDirection";
+import { styles } from "../utils/Styled";
 
-const Header = ({ searchWord, setSearchWord, setCurrentCategory }) => {
+const Header = ({
+	searchWord,
+	setSearchWord,
+	setCurrentCategory,
+	setRankingList,
+}) => {
+	const { direction } = useScrollDirection();
+
 	const onEditSerch = (value) => {
 		setSearchWord(value);
-		// console.log(value);
 		setCurrentCategory({});
+		setRankingList([]);
 	};
+
 	return (
-		<div>
-			<small>楽天レシピ検索を簡単に！</small>
-			<h1>R-Recipeeee!</h1>
-			<input
-				type="text"
-				onChange={(e) => onEditSerch(e.target.value)}
-				placeholder="検索カテゴリ候補を入力してください"
-				value={searchWord}
-			/>
-		</div>
+		<header className="app-header" css={[direction === "down" && styles.hide]}>
+			<div className="container app-header-container">
+				<div className="app-header-title">
+					<small>楽天レシピ検索を簡単に</small>
+					<h1>R-Recipeeee!</h1>
+				</div>
+				<input
+					type="text"
+					onChange={(e) => onEditSerch(e.target.value)}
+					placeholder="検索カテゴリ候補を入力してください"
+					value={searchWord}
+				/>
+			</div>
+		</header>
 	);
 };
 

@@ -1,0 +1,30 @@
+.app-header {
+    background: #FA6946;
+    position: fixed;
+    width: 100%;
+    transition: all .4s;
+    z-index: 999;
+}
+.app-header-container {
+    padding: 13px 0;
+}
+
+.app-header-title {
+    color: #fff;
+}
+
+.app-header-container small {
+font-size: 13px;
+}
+
+.app-header-container h1 {
+    font-size: 30px;
+}
+
+.app-header-container input {
+    margin-top: 7px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+}

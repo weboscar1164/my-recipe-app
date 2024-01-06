@@ -138,6 +138,7 @@ function App() {
 				searchWord={searchWord}
 				setSearchWord={setSearchWord}
 				setCurrentCategory={setCurrentCategory}
+				setRankingList={setRankingList}
 			/>
 			{isEmpty(currentCategory) ? (
 				<CategoryList
@@ -159,7 +160,9 @@ function App() {
 				/>
 			)}
 
-			<div>このアプリは楽天APIを使用しています。</div>
+			<footer>
+				<small>このアプリは楽天APIを使用しています。</small>
+			</footer>
 		</>
 	);
 }

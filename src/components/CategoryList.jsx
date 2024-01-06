@@ -1,4 +1,5 @@
 import React from "react";
+import "./CategoryList.css";
 
 const CategoryList = ({
 	isEmpty,
@@ -21,13 +22,13 @@ const CategoryList = ({
 
 	const renderContent = () => {
 		if (isEmpty(showCategory)) {
-			return <h2>検索スペースに入力してください。</h2>;
+			return <p className="none-list">検索スペースに入力してください。</p>;
 		} else {
 			return Object.keys(showCategory).map((categoryType) => {
 				return showCategory[categoryType].map((category) => {
 					return (
 						<li
-							className="app-category-list-card"
+							className="app-category-card"
 							key={category.categoryId}
 							onClick={() => onCategoryClickHandler(category, categoryType)}
 						>
@@ -40,7 +41,7 @@ const CategoryList = ({
 	};
 
 	return (
-		<div className="app-category-list-container">
+		<div className="container app-category-container">
 			<ul>{renderContent()}</ul>
 		</div>
 	);
