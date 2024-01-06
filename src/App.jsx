@@ -107,8 +107,8 @@ function App() {
 	}, [currentCategory]);
 
 	const getRankingCategoryNumber = (currentCategory, categoryType) => {
-		console.log(allCategory);
-		console.log(currentCategory);
+		// console.log(allCategory);
+		// console.log(currentCategory);
 
 		if (categoryType === "large") {
 			return currentCategory.categoryId;
@@ -123,7 +123,7 @@ function App() {
 				(_mediumCategory) =>
 					currentCategory.parentCategoryId == _mediumCategory.categoryId
 			);
-			console.log(mediumCategory);
+			// console.log(mediumCategory);
 			const largeCategory = allCategory.large.find(
 				(_largeCategory) =>
 					mediumCategory.parentCategoryId == _largeCategory.categoryId
@@ -134,21 +134,32 @@ function App() {
 
 	return (
 		<>
-			<Header></Header>
-			<CategoryList
-				isEmpty={isEmpty}
-				loading={loading}
-				allCategory={allCategory}
-				showCategory={showCategory}
+			<Header
+				searchWord={searchWord}
 				setSearchWord={setSearchWord}
 				setCurrentCategory={setCurrentCategory}
-				getRankingCategoryNumber={getRankingCategoryNumber}
 			/>
-			<RankingList
-				currentCategory={currentCategory}
-				rankingList={rankingList}
-			/>
-			<div></div>
+			{isEmpty(currentCategory) ? (
+				<CategoryList
+					isEmpty={isEmpty}
+					loading={loading}
+					allCategory={allCategory}
+					showCategory={showCategory}
+					setSearchWord={setSearchWord}
+					setCurrentCategory={setCurrentCategory}
+					getRankingCategoryNumber={getRankingCategoryNumber}
+				/>
+			) : (
+				<RankingList
+					isEmpty={isEmpty}
+					loading={loading}
+					setSearchWord={setSearchWord}
+					currentCategory={currentCategory}
+					rankingList={rankingList}
+				/>
+			)}
+
+			<div>このアプリは楽天APIを使用しています。</div>
 		</>
 	);
 }

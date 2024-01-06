@@ -7,11 +7,6 @@ const CategoryList = ({
 	setCurrentCategory,
 	getRankingCategoryNumber,
 }) => {
-	const onEditSerch = (value) => {
-		setSearchWord(value);
-		// console.log(value);
-	};
-
 	const onCategoryClickHandler = (category, categoryType) => {
 		const categoryNumber = getRankingCategoryNumber(category, categoryType);
 		const getUrlCategory = {
@@ -21,6 +16,7 @@ const CategoryList = ({
 		};
 		console.log(getUrlCategory);
 		setCurrentCategory(getUrlCategory);
+		setSearchWord("");
 	};
 
 	const renderContent = () => {
@@ -45,7 +41,6 @@ const CategoryList = ({
 
 	return (
 		<div className="app-category-list-container">
-			<input type="text" onChange={(e) => onEditSerch(e.target.value)} />
 			<ul>{renderContent()}</ul>
 		</div>
 	);
