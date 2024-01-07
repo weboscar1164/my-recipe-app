@@ -4,6 +4,7 @@ import { useScrollDirection } from "../utils/useScrollDirection";
 import { styles } from "../utils/Styled";
 
 const Header = ({
+	setRankingLoading,
 	searchWord,
 	setSearchWord,
 	setCurrentCategory,
@@ -15,6 +16,7 @@ const Header = ({
 		setSearchWord(value);
 		setCurrentCategory({});
 		setRankingList([]);
+		setRankingLoading(true);
 	};
 
 	return (

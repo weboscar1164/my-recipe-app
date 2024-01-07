@@ -101,6 +101,7 @@ reset end
 
 body {
     position: relative;
+    font-family: Verdana, Meiryo, "Hiragino Kaku Gothic ProN", sans-serif;
 }
 .container {
     width: 90%;

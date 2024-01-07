@@ -2,7 +2,7 @@
     background: #FA6946;
     position: fixed;
     width: 100%;
-    transition: all .4s;
+    transition: all .3s;
     z-index: 999;
 }
 .app-header-container {
