@@ -1,0 +1,28 @@
+.app-search-bar {
+    background: #FA6946;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    transition: all .3s;
+    z-index: 900;
+}
+.app-search-bar-container {
+    padding: 5px 0 13px;
+}
+
+
+.app-search-bar-container small {
+font-size: 13px;
+}
+
+.app-search-bar-container h1 {
+    font-size: 30px;
+}
+
+.app-search-bar-container input {
+    margin-top: 7px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+}

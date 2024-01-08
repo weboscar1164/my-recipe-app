@@ -1,7 +1,10 @@
 import { css } from "@emotion/react";
 
 export const styles = {
-	hide: css`
-		transform: translateY(-73px);
+	hideHeader: css`
+		transform: translateY(-75px);
+	`,
+	upNav: css`
+		transform: translateY(-30px);
 	`,
 };
