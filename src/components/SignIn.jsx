@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./signIn.css";
+import "./Auth.css";
 
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -39,7 +39,7 @@ function SignIn({ setIsAuth }) {
 	};
 
 	return (
-		<div className="container sign-in-container">
+		<div className="container auth-container">
 			<form onSubmit={onSubmit}>
 				<input
 					type="email"
@@ -57,7 +57,7 @@ function SignIn({ setIsAuth }) {
 					required
 					onChange={onChange}
 				/>
-				<button type="submit">Submit</button>
+				<button type="submit">ログイン</button>
 			</form>
 		</div>
 	);

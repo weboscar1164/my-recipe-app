@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./SignUp.css";
+import "./Auth.css";
 import { useNavigate } from "react-router-dom";
 import { updateProfile, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.config";
@@ -40,7 +40,7 @@ function SignUp({ setIsAuth }) {
 	};
 
 	return (
-		<div className="container sign-up-container">
+		<div className="container auth-container">
 			<form onSubmit={onSubmit}>
 				<input
 					type="text"
@@ -66,7 +66,7 @@ function SignUp({ setIsAuth }) {
 					required
 					onChange={onChange}
 				/>
-				<button type="submit">Submit</button>
+				<button type="submit">登録</button>
 			</form>
 		</div>
 	);

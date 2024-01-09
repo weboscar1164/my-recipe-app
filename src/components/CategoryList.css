@@ -4,15 +4,20 @@
 }
 
 .app-category-card {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     padding: 10px 20px;
     background: #f1bf74;
     border-radius: 10px;
     margin-bottom: 15px;
-    cursor: pointer;
     transition: scale .3s;
 }
 
+.app-category-card h3 {
+    cursor: pointer;
+
+}
 .app-category-card:hover {
     scale: 1.03;
 }
@@ -20,4 +25,18 @@
 .none-list {
     margin-top: 20px;
     font-size: 18px;
+}
+
+.app-category-like {
+cursor: pointer;
+}
+
+.app-category-icon {
+    font-size: 18px;
+    color: #999;
+    transition: scale .3s;
+}
+
+.app-category-icon:hover {
+    scale:1.2;
 }

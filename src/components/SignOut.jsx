@@ -1,5 +1,5 @@
 import React from "react";
-import "./SignOut.css";
+import "./Auth.css";
 import { auth } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
 
@@ -17,10 +17,10 @@ const SignOut = ({ setIsAuth }) => {
 		}
 	};
 	return (
-		<div className="container sign-out-container">
+		<div className="container auth-container">
 			<form onSubmit={onSubmit}>
 				<p>ログアウトしますか？</p>
-				<button type="submit">Submit</button>
+				<button type="submit">ログアウト</button>
 			</form>
 		</div>
 	);

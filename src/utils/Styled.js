@@ -7,4 +7,10 @@ export const styles = {
 	upNav: css`
 		transform: translateY(-30px);
 	`,
+	activeLike: css`
+		color: rgb(255, 242, 0);
+	`,
+	inActiveLike: css`
+		color: #999;
+	`,
 };
