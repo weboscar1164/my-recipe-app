@@ -3,6 +3,8 @@ import "./Home.css";
 import SearchBar from "./SearchBar";
 import CategoryList from "./CategoryList";
 import RankingList from "./RankingList";
+import ModalComponent from "./ModalComponent";
+import Modal from "react-modal";
 import { getApiData } from "../utils/recipe";
 import { isEmpty } from "../utils/helpers";
 
@@ -13,6 +15,9 @@ function Home() {
 	const [showCategory, setShowCategory] = useState([]);
 	const [currentCategory, setCurrentCategory] = useState({});
 	const [rankingList, setRankingList] = useState([]);
+	const [isOpen, setIsOpen] = useState(false);
+
+	Modal.setAppElement("#root");
 
 	const VALUE = import.meta.env.VITE_API_KEY;
 	useEffect(() => {
@@ -140,6 +145,14 @@ function Home() {
 		}
 	};
 
+	const handleCloseModal = () => {
+		setIsOpen(false);
+	};
+
+	const handleOpenModal = () => {
+		setIsOpen(true);
+	};
+
 	return (
 		<div className="home-container">
 			<SearchBar
@@ -151,12 +164,14 @@ function Home() {
 			/>
 			{isEmpty(currentCategory) ? (
 				<CategoryList
+					isOpen={isOpen}
 					isEmpty={isEmpty}
 					allCategory={allCategory}
 					showCategory={showCategory}
 					setSearchWord={setSearchWord}
 					setCurrentCategory={setCurrentCategory}
 					getRankingCategoryNumber={getRankingCategoryNumber}
+					handleOpenModal={handleOpenModal}
 				/>
 			) : (
 				<RankingList
@@ -171,6 +186,7 @@ function Home() {
 			<footer>
 				<small>このアプリは楽天APIを使用しています。</small>
 			</footer>
+			<ModalComponent isOpen={isOpen} handleCloseModal={handleCloseModal} />
 		</div>
 	);
 }

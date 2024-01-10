@@ -1,6 +1,7 @@
 import {
 	addDoc,
 	getDocs,
+	deleteDoc,
 	collection,
 	serverTimestamp,
 	query,
@@ -19,8 +20,7 @@ export const useAddCategoryLike = async (category, categoryType) => {
 		updateAt: serverTimestamp(),
 	});
 };
-
-export const getIsCategoryLike = async (category, categoryType) => {
+export const useRemoveCategoryLike = async (category, categoryType) => {
 	const q = query(
 		collection(db, "likeCategory"),
 		where("userId", "==", auth.currentUser.uid),
@@ -28,5 +28,23 @@ export const getIsCategoryLike = async (category, categoryType) => {
 		where("categoryType", "==", categoryType)
 	);
 	const querySnapshot = await getDocs(q);
-	return !querySnapshot.empty;
+	querySnapshot.forEach((doc) => {
+		const docRef = doc.ref;
+		deleteDoc(docRef);
+	});
+};
+
+export const getIsCategoryLike = async (category, categoryType) => {
+	if (!auth.currentUser) {
+		return false;
+	} else {
+		const q = query(
+			collection(db, "likeCategory"),
+			where("userId", "==", auth.currentUser.uid),
+			where("categoryId", "==", category.categoryId),
+			where("categoryType", "==", categoryType)
+		);
+		const querySnapshot = await getDocs(q);
+		return !querySnapshot.empty;
+	}
 };

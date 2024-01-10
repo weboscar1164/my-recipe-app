@@ -4,7 +4,7 @@
     top: 70px;
     width: 100%;
     transition: all .3s;
-    z-index: 900;
+    z-index: 1;
 }
 .app-search-bar-container {
     padding: 5px 0 13px;
