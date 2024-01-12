@@ -13,7 +13,6 @@ const NavSp = ({ isAuth }) => {
 
 	const handleToggleNav = () => {
 		openNav ? setOpenNav(false) : setOpenNav(true);
-		console.log(openNav);
 	};
 
 	return (

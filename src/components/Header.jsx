@@ -8,7 +8,7 @@ import { mediaQuery, useMediaQuery } from "../utils/useMediaQuery";
 
 const Header = ({ isAuth, fetchLikeData }) => {
 	const { direction } = useScrollDirection();
-	const isTablet = useMediaQuery(mediaQuery.tablet);
+	const isSp = useMediaQuery(mediaQuery.sp);
 	return (
 		<>
 			<header
@@ -22,10 +22,10 @@ const Header = ({ isAuth, fetchLikeData }) => {
 					</div>
 				</div>
 			</header>
-			{isTablet ? (
-				<NavPc isAuth={isAuth} fetchLikeData={fetchLikeData} />
-			) : (
+			{isSp ? (
 				<NavSp isAuth={isAuth} fetchLikeData={fetchLikeData} />
+			) : (
+				<NavPc isAuth={isAuth} fetchLikeData={fetchLikeData} />
 			)}
 		</>
 	);
