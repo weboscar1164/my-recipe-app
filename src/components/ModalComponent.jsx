@@ -3,6 +3,9 @@ import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 
 const customStyles = {
+	overlay: {
+		zIndex: 100,
+	},
 	content: {
 		top: "30%",
 		left: "50%",
@@ -13,7 +16,6 @@ const customStyles = {
 		minWidth: "40%",
 		background: "#fae4a7",
 		border: "none",
-		zIndex: "999",
 	},
 };
 const ModalComponent = ({ isOpen, handleCloseModal }) => {

@@ -20,6 +20,7 @@ export const useAddCategoryLike = async (category, categoryType) => {
 		updateAt: serverTimestamp(),
 	});
 };
+
 export const useRemoveCategoryLike = async (category, categoryType) => {
 	const q = query(
 		collection(db, "likeCategory"),
@@ -46,5 +47,21 @@ export const getIsCategoryLike = async (category, categoryType) => {
 		);
 		const querySnapshot = await getDocs(q);
 		return !querySnapshot.empty;
+	}
+};
+
+export const getCategoryLikeList = async () => {
+	if (!auth.currentUser) {
+		return false;
+	} else {
+		const q = query(
+			collection(db, "likeCategory"),
+			where("userId", "==", auth.currentUser.uid)
+		);
+		const querySnapshot = await getDocs(q);
+
+		return querySnapshot.docs.map((doc) => ({
+			...doc.data(),
+		}));
 	}
 };

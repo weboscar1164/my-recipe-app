@@ -1,12 +1,14 @@
-import { useEffect } from "react";
-import "./Home.css";
+import { useEffect, useState } from "react";
+import { db, auth } from "../firebase.config";
+import "./Likes.css";
 import SearchBar from "./SearchBar";
-import CategoryList from "./CategoryList";
+import LikeCategoryList from "./LikeCategoryList";
 import RankingList from "./RankingList";
-
 import { isEmpty } from "../utils/helpers";
+import { getCategoryLikeList } from "../utils/likes";
 
-function Home({
+const Likes = ({
+	isAuth,
 	rankingLoading,
 	setRankingLoading,
 	searchWord,
@@ -16,15 +18,70 @@ function Home({
 	setRankingList,
 	isOpen,
 	allCategory,
-	showCategory,
 	setShowCategory,
 	getRankingCategoryNumber,
 	handleOpenModal,
 	rankingList,
-}) {
+}) => {
+	const [showLikeCategory, setShowLikeCategory] = useState([]);
+	const [currentAutherLikeList, setCurrentAutherLikeList] = useState([]);
+
+	const updateLikeData = async () => {
+		try {
+			const fetchedData = await getCategoryLikeList();
+			setCurrentAutherLikeList(fetchedData);
+		} catch (error) {
+			console.error("Error fetching data:", error);
+		}
+	};
+
 	useEffect(() => {
-		setSearchWord("");
-	}, []);
+		// コンポーネントがマウントされたときに一度だけ updateLikeData を呼び出す
+		updateLikeData();
+	}, [updateLikeData]);
+
+	// useEffect(() => {
+	// 	const fetchLikeData = async () => {
+	// 		const fetchedData = await getCategoryLikeList();
+	// 		setCurrentAutherLikeList(fetchedData);
+	// 	};
+	// 	fetchLikeData();
+	// }, [isAuth]);
+
+	useEffect(() => {
+		if (
+			allCategory.length === 0 ||
+			!auth.currentUser ||
+			currentAutherLikeList.length === 0
+		) {
+			return;
+		} else {
+			try {
+				const filterObjects = (data, filterArray) => {
+					// allCategoryを用いてログイン中ユーザーのお気に入り一覧を抽出
+					const filteredData = { ...data };
+					for (const key in filteredData) {
+						if (Array.isArray(filteredData[key])) {
+							const filteredArray = filteredData[key].filter((obj) => {
+								return filterArray.some(
+									(filterObj) =>
+										filterObj.categoryId === obj.categoryId &&
+										filterObj.categoryType === key
+								);
+							});
+							filteredData[key] = filteredArray;
+						} else if (typeof filteredData[key] === "object") {
+							filterObjects(filteredData[key], filterArray);
+						}
+					}
+					return filteredData;
+				};
+				setShowLikeCategory(filterObjects(allCategory, currentAutherLikeList));
+			} catch (error) {
+				console.error("Error fetching data:", error);
+			}
+		}
+	}, [currentAutherLikeList, allCategory]);
 
 	useEffect(() => {
 		const getSerchCategory = (allCategory, searchWord) => {
@@ -78,7 +135,6 @@ function Home({
 		};
 		getSerchCategory(allCategory, searchWord);
 	}, [searchWord, allCategory]);
-
 	return (
 		<div className="home-container">
 			<SearchBar
@@ -89,15 +145,16 @@ function Home({
 				setRankingList={setRankingList}
 			/>
 			{isEmpty(currentCategory) ? (
-				<CategoryList
+				<LikeCategoryList
 					isOpen={isOpen}
 					isEmpty={isEmpty}
 					allCategory={allCategory}
-					showCategory={showCategory}
+					showLikeCategory={showLikeCategory}
 					setSearchWord={setSearchWord}
 					setCurrentCategory={setCurrentCategory}
 					getRankingCategoryNumber={getRankingCategoryNumber}
 					handleOpenModal={handleOpenModal}
+					updateLikeData={updateLikeData}
 				/>
 			) : (
 				<RankingList
@@ -110,6 +167,6 @@ function Home({
 			)}
 		</div>
 	);
-}
+};
 
-export default Home;
+export default Likes;

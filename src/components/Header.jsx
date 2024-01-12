@@ -1,12 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import "./Header.css";
-import { Link } from "react-router-dom";
+import NavPc from "./NavPc";
+import NavSp from "./NavSp";
 import { useScrollDirection } from "../utils/useScrollDirection";
 import { styles } from "../utils/Styled";
+import { mediaQuery, useMediaQuery } from "../utils/useMediaQuery";
 
-const Header = ({ isAuth }) => {
+const Header = ({ isAuth, fetchLikeData }) => {
 	const { direction } = useScrollDirection();
-
+	const isTablet = useMediaQuery(mediaQuery.tablet);
 	return (
 		<>
 			<header
@@ -20,28 +22,11 @@ const Header = ({ isAuth }) => {
 					</div>
 				</div>
 			</header>
-			<nav
-				className="app-header-nav"
-				css={[direction === "down" && styles.upNav]}
-			>
-				<Link className="app-header-nav-item" to="/">
-					ホーム
-				</Link>
-				{!isAuth ? (
-					<>
-						<Link className="app-header-nav-item" to="/signin">
-							ログイン
-						</Link>
-						<Link className="app-header-nav-item" to="/signup">
-							新規登録
-						</Link>
-					</>
-				) : (
-					<Link className="app-header-nav-item" to="/signout">
-						ログアウト
-					</Link>
-				)}
-			</nav>
+			{isTablet ? (
+				<NavPc isAuth={isAuth} fetchLikeData={fetchLikeData} />
+			) : (
+				<NavSp isAuth={isAuth} fetchLikeData={fetchLikeData} />
+			)}
 		</>
 	);
 };
