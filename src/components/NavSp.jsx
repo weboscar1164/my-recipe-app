@@ -43,11 +43,7 @@ const NavSp = ({ isAuth }) => {
 				className="app-header-nav-sp"
 				css={[openNav && styles.activeNavigation]}
 			>
-				<Link
-					className="app-header-nav-item app-header-nav-item-sp"
-					to="/"
-					onClick={() => setSerchWord("")}
-				>
+				<Link className="app-header-nav-item app-header-nav-item-sp" to="/">
 					ホーム
 				</Link>
 				{!isAuth ? (
@@ -55,31 +51,28 @@ const NavSp = ({ isAuth }) => {
 						<Link
 							className="app-header-nav-item app-header-nav-item-sp"
 							to="/signin"
-							onClick={() => setSerchWord("")}
 						>
 							ログイン
 						</Link>
 						<Link
 							className="app-header-nav-item app-header-nav-item-sp"
 							to="/signup"
-							onClick={() => setSerchWord("")}
 						>
 							新規登録
 						</Link>
 					</>
 				) : (
 					<>
-						<Link
+						<div
 							className="app-header-nav-item app-header-nav-item-sp"
 							to="/likes"
-							onClick={() => setSerchWord("")}
+							onClick={() => handleToLikeCategoryList()}
 						>
 							お気に入り
-						</Link>
+						</div>
 						<Link
 							className="app-header-nav-item app-header-nav-item-sp"
 							to="/signout"
-							onClick={() => setSerchWord("")}
 						>
 							ログアウト
 						</Link>

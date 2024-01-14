@@ -8,7 +8,6 @@ import { isEmpty } from "../utils/helpers";
 import { getCategoryLikeList } from "../utils/likes";
 
 const Likes = ({
-	isAuth,
 	rankingLoading,
 	setRankingLoading,
 	searchWord,
@@ -37,16 +36,9 @@ const Likes = ({
 
 	useEffect(() => {
 		// コンポーネントがマウントされたときに一度だけ updateLikeData を呼び出す
+		setSearchWord("");
 		updateLikeData();
-	}, [updateLikeData]);
-
-	// useEffect(() => {
-	// 	const fetchLikeData = async () => {
-	// 		const fetchedData = await getCategoryLikeList();
-	// 		setCurrentAutherLikeList(fetchedData);
-	// 	};
-	// 	fetchLikeData();
-	// }, [isAuth]);
+	}, []);
 
 	useEffect(() => {
 		if (
@@ -150,6 +142,7 @@ const Likes = ({
 					isEmpty={isEmpty}
 					allCategory={allCategory}
 					showLikeCategory={showLikeCategory}
+					setShowLikeCategory={setShowLikeCategory}
 					setSearchWord={setSearchWord}
 					setCurrentCategory={setCurrentCategory}
 					getRankingCategoryNumber={getRankingCategoryNumber}

@@ -1,43 +1,17 @@
-/** @jsxImportSource @emotion/react */
-import React, { useEffect, useState } from "react";
 import "./CategoryList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { auth } from "../firebase.config";
-import { styles } from "../utils/Styled";
 import { isEmpty } from "../utils/helpers";
-import {
-	getIsCategoryLike,
-	useAddCategoryLike,
-	useRemoveCategoryLike,
-} from "../utils/likes";
+import { useRemoveCategoryLike } from "../utils/likes";
 
 const LikeCategoryList = ({
 	showLikeCategory,
+	setShowLikeCategory,
 	setSearchWord,
 	setCurrentCategory,
+	updateLikeData,
 	getRankingCategoryNumber,
-	handleOpenModal,
 }) => {
-	const [isLike, setIsLike] = useState([]);
-
-	useEffect(() => {
-		const fetchData = async () => {
-			// 表示するCategoryリストをアカウント内のお気に入りリストと照合してisLikeに格納
-			const likes = await Promise.all(
-				Object.keys(showLikeCategory).flatMap((categoryType) =>
-					showLikeCategory[categoryType].map(async (category) => ({
-						category,
-						categoryType,
-						isLike: await getIsCategoryLike(category, categoryType),
-					}))
-				)
-			);
-			setIsLike(likes);
-		};
-		fetchData();
-	}, [showLikeCategory]);
-
 	const onCategoryClickHandler = (category, categoryType) => {
 		// 楽天レシピランキングAPIのURL生成用カテゴリ番号を付与
 		const categoryNumber = getRankingCategoryNumber(category, categoryType);
@@ -50,12 +24,31 @@ const LikeCategoryList = ({
 	};
 
 	const onCategoryDeleteHandler = async (category, categoryType) => {
-		await useRemoveCategoryLike(category, categoryType);
-		const updatedLikeList = Object.keys(showLikeCategory).map(
-			(categoryType) => {
-				return showLikeCategory[_categoryType].map((category) => {});
+		try {
+			const updatedLikeCategory = { ...showLikeCategory };
+			updatedLikeCategory[categoryType] = updatedLikeCategory[
+				categoryType
+			].filter(
+				(categoryItem) => categoryItem.categoryId !== category.categoryId
+			);
+
+			// もし updatedLikeCategory がすべてのカテゴリが空であれば、空のオブジェクトに設定
+			if (
+				Object.values(updatedLikeCategory).every(
+					(categoryArray) => categoryArray.length === 0
+				)
+			) {
+				setShowLikeCategory({});
+			} else {
+				setShowLikeCategory(updatedLikeCategory);
 			}
-		);
+
+			// Firestore からの削除
+			useRemoveCategoryLike(category, categoryType);
+			console.log(updatedLikeCategory);
+		} catch (error) {
+			console.error("お気に入りリストを削除できませんでした。:", error);
+		}
 	};
 
 	const renderContent = () => {

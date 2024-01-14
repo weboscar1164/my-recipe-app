@@ -5,10 +5,17 @@ import NavSp from "./NavSp";
 import { useScrollDirection } from "../utils/useScrollDirection";
 import { styles } from "../utils/Styled";
 import { mediaQuery, useMediaQuery } from "../utils/useMediaQuery";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ isAuth, fetchLikeData }) => {
 	const { direction } = useScrollDirection();
+	const navigate = useNavigate();
 	const isSp = useMediaQuery(mediaQuery.sp);
+
+	const handleToLikeCategoryList = () => {
+		navigate("/likes");
+	};
+
 	return (
 		<>
 			<header
@@ -23,9 +30,17 @@ const Header = ({ isAuth, fetchLikeData }) => {
 				</div>
 			</header>
 			{isSp ? (
-				<NavSp isAuth={isAuth} fetchLikeData={fetchLikeData} />
+				<NavSp
+					isAuth={isAuth}
+					fetchLikeData={fetchLikeData}
+					handleToLikeCategoryList={handleToLikeCategoryList}
+				/>
 			) : (
-				<NavPc isAuth={isAuth} fetchLikeData={fetchLikeData} />
+				<NavPc
+					isAuth={isAuth}
+					fetchLikeData={fetchLikeData}
+					handleToLikeCategoryList={handleToLikeCategoryList}
+				/>
 			)}
 		</>
 	);

@@ -29,6 +29,8 @@ font-size: 13px;
     right: 10%;
     top: 50px;
     z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
     transition: transform .3s;
 }
 
@@ -37,6 +39,7 @@ font-size: 13px;
     margin-right: 10px;
     color: #fff;
     font-weight: 800;
+    cursor: pointer;
 }
 
 .app-header-nav-item::after {

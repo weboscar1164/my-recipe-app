@@ -5,56 +5,36 @@ import { useScrollDirection } from "../utils/useScrollDirection";
 import { styles } from "../utils/Styled";
 import { Link } from "react-router-dom";
 
-const NavPc = ({ isAuth }) => {
+const NavPc = ({ isAuth, handleToLikeCategoryList }) => {
 	const { direction } = useScrollDirection();
-
-	const handleLikeLInk = () => {
-		setSerchWord("");
-	};
 
 	return (
 		<nav
 			className="app-header-nav"
 			css={[direction === "down" && styles.upNav]}
 		>
-			<Link
-				className="app-header-nav-item"
-				to="/"
-				onClick={() => setSerchWord("")}
-			>
+			<Link className="app-header-nav-item" to="/">
 				ホーム
 			</Link>
 			{!isAuth ? (
 				<>
-					<Link
-						className="app-header-nav-item"
-						to="/signin"
-						onClick={() => setSerchWord("")}
-					>
+					<Link className="app-header-nav-item" to="/signin">
 						ログイン
 					</Link>
-					<Link
-						className="app-header-nav-item"
-						to="/signup"
-						onClick={() => setSerchWord("")}
-					>
+					<Link className="app-header-nav-item" to="/signup">
 						新規登録
 					</Link>
 				</>
 			) : (
 				<>
-					<Link
+					<div
 						className="app-header-nav-item"
 						to="/likes"
-						onClick={() => handleLikeLInk()}
+						onClick={() => handleToLikeCategoryList()}
 					>
 						お気に入り
-					</Link>
-					<Link
-						className="app-header-nav-item"
-						to="/signout"
-						onClick={() => setSerchWord("")}
-					>
+					</div>
+					<Link className="app-header-nav-item" to="/signout">
 						ログアウト
 					</Link>
 				</>
