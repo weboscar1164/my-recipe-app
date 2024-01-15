@@ -123,7 +123,7 @@ const Likes = ({
 				small: selectedSmallCategory,
 			};
 
-			setShowCategory(serectedCategory);
+			setShowLikeCategory(serectedCategory);
 		};
 		getSerchCategory(allCategory, searchWord);
 	}, [searchWord, allCategory]);
