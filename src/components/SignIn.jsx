@@ -40,25 +40,30 @@ function SignIn({ setIsAuth }) {
 
 	return (
 		<div className="container auth-container">
-			<form onSubmit={onSubmit}>
-				<input
-					type="email"
-					placeholder="Email"
-					id="email"
-					value={email}
-					required
-					onChange={onChange}
-				/>
-				<input
-					type="password"
-					placeholder="Password"
-					id="password"
-					value={password}
-					required
-					onChange={onChange}
-				/>
-				<button type="submit">ログイン</button>
-			</form>
+			<div className="auth-wrapper">
+				<h2>ログイン</h2>
+				<form onSubmit={onSubmit}>
+					<label htmlFor="email">e-mail</label>
+					<input
+						type="email"
+						placeholder="Email"
+						id="email"
+						value={email}
+						required
+						onChange={onChange}
+					/>
+					<label htmlFor="password">パスワード</label>
+					<input
+						type="password"
+						placeholder="Password"
+						id="password"
+						value={password}
+						required
+						onChange={onChange}
+					/>
+					<button type="submit">ログイン</button>
+				</form>
+			</div>
 		</div>
 	);
 }
