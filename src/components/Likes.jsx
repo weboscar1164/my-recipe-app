@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { db, auth } from "../firebase.config";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase.config";
 import "./Likes.css";
 import SearchBar from "./SearchBar";
 import LikeCategoryList from "./LikeCategoryList";
@@ -8,6 +9,8 @@ import { isEmpty } from "../utils/helpers";
 import { getCategoryLikeList } from "../utils/likes";
 
 const Likes = ({
+	isAuth,
+	setIsAuth,
 	rankingLoading,
 	setRankingLoading,
 	searchWord,
@@ -24,6 +27,7 @@ const Likes = ({
 }) => {
 	const [showLikeCategory, setShowLikeCategory] = useState([]);
 	const [currentAutherLikeList, setCurrentAutherLikeList] = useState([]);
+	const navigate = useNavigate();
 
 	const updateLikeData = async () => {
 		try {
@@ -35,9 +39,13 @@ const Likes = ({
 	};
 
 	useEffect(() => {
-		// コンポーネントがマウントされたときに一度だけ updateLikeData を呼び出す
-		setSearchWord("");
-		updateLikeData();
+		if (!auth.currentUser) {
+			navigate("/signin");
+		} else {
+			// コンポーネントがマウントされたときに一度だけ updateLikeData を呼び出す
+			setSearchWord("");
+			updateLikeData();
+		}
 	}, []);
 
 	useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 
 import Header from "./components/Header";
@@ -13,6 +13,7 @@ import { getApiData } from "./utils/recipe";
 import { isEmpty } from "./utils/helpers";
 
 const App = () => {
+	// const [isAuth, setIsAuth] = useState(false);
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 	const [allCategory, setAllCategory] = useState([]);
 	const [rankingLoading, setRankingLoading] = useState(true);

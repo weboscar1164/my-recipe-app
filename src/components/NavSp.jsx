@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
 import "./Header.css";
+import { auth } from "../firebase.config";
 import { useScrollDirection } from "../utils/useScrollDirection";
 import { styles } from "../utils/Styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,7 +47,7 @@ const NavSp = ({ isAuth }) => {
 				<Link className="app-header-nav-item app-header-nav-item-sp" to="/">
 					ホーム
 				</Link>
-				{!isAuth ? (
+				{!auth.currentUser ? (
 					<>
 						<Link
 							className="app-header-nav-item app-header-nav-item-sp"

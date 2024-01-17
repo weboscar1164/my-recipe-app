@@ -23,6 +23,7 @@ const ModalComponent = ({ isOpen, handleCloseModal }) => {
 
 	const onLogin = () => {
 		navigate("/signin");
+		handleCloseModal();
 	};
 	return (
 		<Modal isOpen={isOpen} style={customStyles}>

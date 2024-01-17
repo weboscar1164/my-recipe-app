@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
+import { auth } from "../firebase.config";
 import "./Header.css";
 import { useScrollDirection } from "../utils/useScrollDirection";
 import { styles } from "../utils/Styled";
@@ -16,7 +17,7 @@ const NavPc = ({ isAuth, handleToLikeCategoryList }) => {
 			<Link className="app-header-nav-item" to="/">
 				ホーム
 			</Link>
-			{!isAuth ? (
+			{!auth.currentUser ? (
 				<>
 					<Link className="app-header-nav-item" to="/signin">
 						ログイン

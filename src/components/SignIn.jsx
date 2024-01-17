@@ -30,7 +30,7 @@ function SignIn({ setIsAuth }) {
 			);
 			if (userCredential.user) {
 				localStorage.setItem("isAuth", true);
-				setIsAuth(true);
+				setIsAuth(localStorage.getItem("isAuth"));
 				navigate("/");
 			}
 		} catch (error) {

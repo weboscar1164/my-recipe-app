@@ -32,7 +32,7 @@ function SignUp({ setIsAuth }) {
 				displayName: name,
 			});
 			localStorage.setItem("isAuth", true);
-			setIsAuth(true);
+			setIsAuth(localStorage.getItem("isAuth"));
 			navigate("/");
 		} catch (error) {
 			console.log(error);

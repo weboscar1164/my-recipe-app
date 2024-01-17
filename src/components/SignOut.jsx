@@ -10,7 +10,7 @@ const SignOut = ({ setIsAuth }) => {
 		try {
 			auth.signOut();
 			localStorage.setItem("isAuth", false);
-			setIsAuth(false);
+			setIsAuth(localStorage.getItem("isAuth"));
 			navigate("/");
 		} catch (error) {
 			console.log(error);
