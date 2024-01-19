@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import "./ModalComponent.css";
 import { useNavigate } from "react-router-dom";
 
 const customStyles = {
@@ -27,13 +28,20 @@ const ModalComponent = ({ isOpen, handleCloseModal }) => {
 	};
 	return (
 		<Modal isOpen={isOpen} style={customStyles}>
-			<p>
+			<p className="modal-text">
 				お気に入り機能を使用するには、
 				<br />
 				ログインしてください。
 			</p>
-			<button onClick={() => handleCloseModal()}>キャンセル</button>
-			<button onClick={onLogin}>ログイン</button>
+			<button
+				className="modal-button modal-button-close"
+				onClick={() => handleCloseModal()}
+			>
+				キャンセル
+			</button>
+			<button className="modal-button modal-button-action" onClick={onLogin}>
+				ログイン
+			</button>
 		</Modal>
 	);
 };

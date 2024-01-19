@@ -1,0 +1,21 @@
+.modal-button {
+    width: 100px;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    font-weight: 800;
+}
+
+.modal-button-close {
+    background: rgb(245, 153, 32);
+}
+
+.modal-button-action {
+    background: #FA6946;
+}
+
+.modal-text {
+    margin-bottom: 20px;
+}

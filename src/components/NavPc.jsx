@@ -28,13 +28,13 @@ const NavPc = ({ isAuth, handleToLikeCategoryList }) => {
 				</>
 			) : (
 				<>
-					<div
+					<Link
 						className="app-header-nav-item"
 						to="/likes"
-						onClick={() => handleToLikeCategoryList()}
+						// onClick={() => handleToLikeCategoryList()}
 					>
 						お気に入り
-					</div>
+					</Link>
 					<Link className="app-header-nav-item" to="/signout">
 						ログアウト
 					</Link>

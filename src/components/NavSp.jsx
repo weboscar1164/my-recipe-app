@@ -13,7 +13,11 @@ const NavSp = ({ isAuth }) => {
 	const { direction } = useScrollDirection();
 
 	const handleToggleNav = () => {
-		openNav ? setOpenNav(false) : setOpenNav(true);
+		setOpenNav(!openNav);
+	};
+
+	const handleLinkClick = () => {
+		setOpenNav(false);
 	};
 
 	return (
@@ -44,19 +48,25 @@ const NavSp = ({ isAuth }) => {
 				className="app-header-nav-sp"
 				css={[openNav && styles.activeNavigation]}
 			>
-				<Link className="app-header-nav-item app-header-nav-item-sp" to="/">
+				<Link
+					className="app-header-nav-item app-header-nav-item-sp"
+					onClick={() => handleLinkClick()}
+					to="/"
+				>
 					ホーム
 				</Link>
 				{!auth.currentUser ? (
 					<>
 						<Link
 							className="app-header-nav-item app-header-nav-item-sp"
+							onClick={() => handleLinkClick()}
 							to="/signin"
 						>
 							ログイン
 						</Link>
 						<Link
 							className="app-header-nav-item app-header-nav-item-sp"
+							onClick={() => handleLinkClick()}
 							to="/signup"
 						>
 							新規登録
@@ -64,15 +74,16 @@ const NavSp = ({ isAuth }) => {
 					</>
 				) : (
 					<>
-						<div
-							className="app-header-nav-item app-header-nav-item-sp"
-							to="/likes"
-							onClick={() => handleToLikeCategoryList()}
-						>
-							お気に入り
-						</div>
 						<Link
 							className="app-header-nav-item app-header-nav-item-sp"
+							onClick={() => handleLinkClick()}
+							to="/likes"
+						>
+							お気に入り
+						</Link>
+						<Link
+							className="app-header-nav-item app-header-nav-item-sp"
+							onClick={() => handleLinkClick()}
 							to="/signout"
 						>
 							ログアウト

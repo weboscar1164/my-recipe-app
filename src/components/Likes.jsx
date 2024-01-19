@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import LikeCategoryList from "./LikeCategoryList";
 import RankingList from "./RankingList";
 import { isEmpty } from "../utils/helpers";
-import { getCategoryLikeList } from "../utils/likes";
+import { getCategoryLikeList, getSerchCategory } from "../utils/handleData";
 
 const Likes = ({
 	isAuth,
@@ -25,6 +25,7 @@ const Likes = ({
 	handleOpenModal,
 	rankingList,
 }) => {
+	const [fetchedShowLikeCategory, setFetchedShowLikeCategory] = useState([]);
 	const [showLikeCategory, setShowLikeCategory] = useState([]);
 	const [currentAutherLikeList, setCurrentAutherLikeList] = useState([]);
 	const navigate = useNavigate();
@@ -40,6 +41,7 @@ const Likes = ({
 
 	useEffect(() => {
 		if (!auth.currentUser) {
+			// 未ログイン時にログイン画面にリダイレクト
 			navigate("/signin");
 		} else {
 			// コンポーネントがマウントされたときに一度だけ updateLikeData を呼び出す
@@ -76,7 +78,10 @@ const Likes = ({
 					}
 					return filteredData;
 				};
-				setShowLikeCategory(filterObjects(allCategory, currentAutherLikeList));
+				setFetchedShowLikeCategory(
+					filterObjects(allCategory, currentAutherLikeList)
+				);
+				setShowLikeCategory(fetchedShowLikeCategory);
 			} catch (error) {
 				console.error("Error fetching data:", error);
 			}
@@ -84,57 +89,21 @@ const Likes = ({
 	}, [currentAutherLikeList, allCategory]);
 
 	useEffect(() => {
-		const getSerchCategory = (allCategory, searchWord) => {
-			if (!searchWord || allCategory.length === 0) {
-				setShowCategory([]);
-				return;
-			}
-			const getSerchSelectedCategory = (searchWord, categoryName) => {
-				return new RegExp(searchWord).test(categoryName);
-			};
-			const selectedLargeCategory = allCategory.large.filter((category) => {
-				return getSerchSelectedCategory(searchWord, category.categoryName);
-			});
-			const selectedMediumCategory = allCategory.medium.filter((category) => {
-				return getSerchSelectedCategory(searchWord, category.categoryName);
-			});
-			const selectedSmallCategory = allCategory.small.filter((category) => {
-				return getSerchSelectedCategory(searchWord, category.categoryName);
-			});
-
-			// カテゴリ名の重複を削除
-			const getUniqueCategory = (
-				targetSelectedCategory,
-				useSelectedCategory
-			) => {
-				return targetSelectedCategory.filter(
-					(targetCategory) =>
-						!useSelectedCategory.some(
-							(useCategory) =>
-								targetCategory.categoryName === useCategory.categoryName
-						)
-				);
-			};
-
-			const uniqueMediumCategory = getUniqueCategory(
-				selectedMediumCategory,
-				selectedSmallCategory
+		if (fetchedShowLikeCategory.length === 0) {
+			return;
+		}
+		if (!searchWord) {
+			setShowLikeCategory(fetchedShowLikeCategory);
+			return;
+		} else {
+			const selectedCategory = getSerchCategory(
+				fetchedShowLikeCategory,
+				searchWord
 			);
-			const uniqueLargeCategory = getUniqueCategory(
-				selectedLargeCategory,
-				selectedMediumCategory
-			);
+			setShowLikeCategory(selectedCategory);
+		}
+	}, [searchWord, fetchedShowLikeCategory]);
 
-			const serectedCategory = {
-				large: uniqueLargeCategory,
-				medium: uniqueMediumCategory,
-				small: selectedSmallCategory,
-			};
-
-			setShowLikeCategory(serectedCategory);
-		};
-		getSerchCategory(allCategory, searchWord);
-	}, [searchWord, allCategory]);
 	return (
 		<div className="home-container">
 			<SearchBar

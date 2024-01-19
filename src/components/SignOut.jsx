@@ -18,10 +18,12 @@ const SignOut = ({ setIsAuth }) => {
 	};
 	return (
 		<div className="container auth-container">
-			<form onSubmit={onSubmit}>
-				<p>ログアウトしますか？</p>
-				<button type="submit">ログアウト</button>
-			</form>
+			<div className="auth-wrapper">
+				<form onSubmit={onSubmit}>
+					<p>ログアウトしますか？</p>
+					<button type="submit">ログアウト</button>
+				</form>
+			</div>
 		</div>
 	);
 };

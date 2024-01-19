@@ -10,6 +10,53 @@ import {
 import { db, auth } from "../firebase.config";
 import { v4 as uuidv4 } from "uuid";
 
+//serchData
+export const getSerchCategory = (targetCategoryList, searchWord) => {
+	const getSerchSelectedCategory = (searchWord, categoryName) => {
+		return new RegExp(searchWord).test(categoryName);
+	};
+	const selectedLargeCategory = targetCategoryList.large.filter((category) => {
+		return getSerchSelectedCategory(searchWord, category.categoryName);
+	});
+	const selectedMediumCategory = targetCategoryList.medium.filter(
+		(category) => {
+			return getSerchSelectedCategory(searchWord, category.categoryName);
+		}
+	);
+	const selectedSmallCategory = targetCategoryList.small.filter((category) => {
+		return getSerchSelectedCategory(searchWord, category.categoryName);
+	});
+
+	// カテゴリ名の重複を削除
+	const getUniqueCategory = (targetSelectedCategory, useSelectedCategory) => {
+		return targetSelectedCategory.filter(
+			(targetCategory) =>
+				!useSelectedCategory.some(
+					(useCategory) =>
+						targetCategory.categoryName === useCategory.categoryName
+				)
+		);
+	};
+
+	const uniqueMediumCategory = getUniqueCategory(
+		selectedMediumCategory,
+		selectedSmallCategory
+	);
+	const uniqueLargeCategory = getUniqueCategory(
+		selectedLargeCategory,
+		selectedMediumCategory
+	);
+
+	const selectedCategory = {
+		large: uniqueLargeCategory,
+		medium: uniqueMediumCategory,
+		small: selectedSmallCategory,
+	};
+
+	return selectedCategory;
+};
+
+// likes
 export const useAddCategoryLike = async (category, categoryType) => {
 	const id = uuidv4();
 	await addDoc(collection(db, "likeCategory"), {

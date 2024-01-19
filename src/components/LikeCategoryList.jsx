@@ -2,7 +2,7 @@ import "./CategoryList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { isEmpty } from "../utils/helpers";
-import { useRemoveCategoryLike } from "../utils/likes";
+import { useRemoveCategoryLike } from "../utils/handleData";
 
 const LikeCategoryList = ({
 	showLikeCategory,
@@ -45,7 +45,6 @@ const LikeCategoryList = ({
 
 			// Firestore からの削除
 			useRemoveCategoryLike(category, categoryType);
-			console.log(updatedLikeCategory);
 		} catch (error) {
 			console.error("お気に入りリストを削除できませんでした。:", error);
 		}

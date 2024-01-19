@@ -10,7 +10,7 @@ import {
 	getIsCategoryLike,
 	useAddCategoryLike,
 	useRemoveCategoryLike,
-} from "../utils/likes";
+} from "../utils/handleData";
 
 const CategoryList = ({
 	showCategory,

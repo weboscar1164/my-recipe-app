@@ -9,11 +9,10 @@ import SignUp from "./components/SignUp";
 import SignOut from "./components/SignOut";
 import Likes from "./components/Likes";
 import ModalComponent from "./components/ModalComponent";
-import { getApiData } from "./utils/recipe";
+import { getApiData } from "./utils/api";
 import { isEmpty } from "./utils/helpers";
 
 const App = () => {
-	// const [isAuth, setIsAuth] = useState(false);
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 	const [allCategory, setAllCategory] = useState([]);
 	const [rankingLoading, setRankingLoading] = useState(true);
