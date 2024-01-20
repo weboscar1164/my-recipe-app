@@ -9,7 +9,6 @@ const LikeCategoryList = ({
 	setShowLikeCategory,
 	setSearchWord,
 	setCurrentCategory,
-	updateLikeData,
 	getRankingCategoryNumber,
 }) => {
 	const onCategoryClickHandler = (category, categoryType) => {

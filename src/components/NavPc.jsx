@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
 import { auth } from "../firebase.config";
 import "./Header.css";
 import { useScrollDirection } from "../utils/useScrollDirection";

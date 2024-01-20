@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Header.css";
 import { auth } from "../firebase.config";
 import { useScrollDirection } from "../utils/useScrollDirection";
