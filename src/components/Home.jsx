@@ -5,6 +5,7 @@ import CategoryList from "./CategoryList";
 import RankingList from "./RankingList";
 
 import { isEmpty } from "../utils/helpers";
+import { getSerchCategory } from "../utils/handleData";
 
 function Home({
 	rankingLoading,
@@ -27,56 +28,13 @@ function Home({
 	}, []);
 
 	useEffect(() => {
-		const getSerchCategory = (allCategory, searchWord) => {
-			if (!searchWord || allCategory.length === 0) {
-				setShowCategory([]);
-				return;
-			}
-			const getSerchSelectedCategory = (searchWord, categoryName) => {
-				return new RegExp(searchWord).test(categoryName);
-			};
-			const selectedLargeCategory = allCategory.large.filter((category) => {
-				return getSerchSelectedCategory(searchWord, category.categoryName);
-			});
-			const selectedMediumCategory = allCategory.medium.filter((category) => {
-				return getSerchSelectedCategory(searchWord, category.categoryName);
-			});
-			const selectedSmallCategory = allCategory.small.filter((category) => {
-				return getSerchSelectedCategory(searchWord, category.categoryName);
-			});
+		if (!searchWord || allCategory.length === 0) {
+			setShowCategory([]);
+			return;
+		}
 
-			// カテゴリ名の重複を削除
-			const getUniqueCategory = (
-				targetSelectedCategory,
-				useSelectedCategory
-			) => {
-				return targetSelectedCategory.filter(
-					(targetCategory) =>
-						!useSelectedCategory.some(
-							(useCategory) =>
-								targetCategory.categoryName === useCategory.categoryName
-						)
-				);
-			};
-
-			const uniqueMediumCategory = getUniqueCategory(
-				selectedMediumCategory,
-				selectedSmallCategory
-			);
-			const uniqueLargeCategory = getUniqueCategory(
-				selectedLargeCategory,
-				selectedMediumCategory
-			);
-
-			const serectedCategory = {
-				large: uniqueLargeCategory,
-				medium: uniqueMediumCategory,
-				small: selectedSmallCategory,
-			};
-
-			setShowCategory(serectedCategory);
-		};
-		getSerchCategory(allCategory, searchWord);
+		const selectedCategory = getSerchCategory(allCategory, searchWord);
+		setShowCategory(selectedCategory);
 	}, [searchWord, allCategory]);
 
 	return (
