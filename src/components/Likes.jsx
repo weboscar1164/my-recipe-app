@@ -5,12 +5,11 @@ import "./Likes.css";
 import SearchBar from "./SearchBar";
 import LikeCategoryList from "./LikeCategoryList";
 import RankingList from "./RankingList";
+
 import { isEmpty } from "../utils/helpers";
 import { getCategoryLikeList, getSerchCategory } from "../utils/handleData";
 
 const Likes = ({
-	isAuth,
-	setIsAuth,
 	rankingLoading,
 	setRankingLoading,
 	searchWord,
@@ -20,7 +19,6 @@ const Likes = ({
 	setRankingList,
 	isOpen,
 	allCategory,
-	setShowCategory,
 	getRankingCategoryNumber,
 	handleOpenModal,
 	rankingList,
@@ -89,10 +87,12 @@ const Likes = ({
 	}, [currentAutherLikeList, allCategory]);
 
 	useEffect(() => {
+		// 検索機能
 		if (fetchedShowLikeCategory.length === 0) {
 			return;
 		}
 		if (!searchWord) {
+			// serchWordが空になったらすべてのお気に入りを表示
 			setShowLikeCategory(fetchedShowLikeCategory);
 			return;
 		} else {

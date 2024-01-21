@@ -24,15 +24,18 @@ function Home({
 	rankingList,
 }) {
 	useEffect(() => {
+		// 初回レンダリング時にserchWordを空にする
 		setSearchWord("");
 	}, []);
 
 	useEffect(() => {
 		if (!searchWord || allCategory.length === 0) {
+			// 検索語句が空になったら一覧を消去
 			setShowCategory([]);
 			return;
 		}
 
+		// 検索語句が入ったらすべてのカテゴリから検索する
 		const selectedCategory = getSerchCategory(allCategory, searchWord);
 		setShowCategory(selectedCategory);
 	}, [searchWord, allCategory]);
