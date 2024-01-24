@@ -8,6 +8,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import SignOut from "./components/SignOut";
 import Likes from "./components/Likes";
+import Error from "./components/Error";
 import ModalComponent from "./components/ModalComponent";
 import { getApiData } from "./utils/api";
 import { isEmpty } from "./utils/helpers";
@@ -155,6 +156,7 @@ const App = () => {
 						/>
 					}
 				/>
+				<Route path="/error" element={<Error />} />
 			</Routes>
 			<footer>
 				<small>このアプリは楽天APIを使用しています。</small>

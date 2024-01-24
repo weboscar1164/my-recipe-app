@@ -19,4 +19,7 @@ export const styles = {
 	navigationButtonActive: css`
 		transform: translateY(-53px);
 	`,
+	authErrorMessageActive: css`
+		display: block;
+	`,
 };

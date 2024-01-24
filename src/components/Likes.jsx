@@ -7,7 +7,10 @@ import LikeCategoryList from "./LikeCategoryList";
 import RankingList from "./RankingList";
 
 import { isEmpty } from "../utils/helpers";
-import { getCategoryLikeList, getSerchCategory } from "../utils/handleData";
+import {
+	getCategoryLikeList,
+	useGetSerchCategory,
+} from "../utils/useHandleData";
 
 const Likes = ({
 	rankingLoading,
@@ -96,7 +99,7 @@ const Likes = ({
 			setShowLikeCategory(fetchedShowLikeCategory);
 			return;
 		} else {
-			const selectedCategory = getSerchCategory(
+			const selectedCategory = useGetSerchCategory(
 				fetchedShowLikeCategory,
 				searchWord
 			);

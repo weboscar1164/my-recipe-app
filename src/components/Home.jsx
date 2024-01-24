@@ -5,7 +5,7 @@ import CategoryList from "./CategoryList";
 import RankingList from "./RankingList";
 
 import { isEmpty } from "../utils/helpers";
-import { getSerchCategory } from "../utils/handleData";
+import { useGetSerchCategory } from "../utils/useHandleData";
 
 function Home({
 	rankingLoading,
@@ -36,7 +36,7 @@ function Home({
 		}
 
 		// 検索語句が入ったらすべてのカテゴリから検索する
-		const selectedCategory = getSerchCategory(allCategory, searchWord);
+		const selectedCategory = useGetSerchCategory(allCategory, searchWord);
 		setShowCategory(selectedCategory);
 	}, [searchWord, allCategory]);
 

@@ -2,7 +2,7 @@ import "./CategoryList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { isEmpty } from "../utils/helpers";
-import { useRemoveCategoryLike } from "../utils/handleData";
+import { useRemoveCategoryLike } from "../utils/useHandleData";
 
 const LikeCategoryList = ({
 	showLikeCategory,

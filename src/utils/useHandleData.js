@@ -7,11 +7,14 @@ import {
 	query,
 	where,
 } from "firebase/firestore";
+import useErrorState from "./useErrorState";
 import { db, auth } from "../firebase.config";
 import { v4 as uuidv4 } from "uuid";
+import { FirebaseError } from "firebase/app";
+import { useNavigate } from "react-router-dom";
 
-//serchData
-export const getSerchCategory = (targetCategoryList, searchWord) => {
+// serchData
+export const useGetSerchCategory = (targetCategoryList, searchWord) => {
 	const getSerchSelectedCategory = (searchWord, categoryName) => {
 		return new RegExp(searchWord).test(categoryName);
 	};
@@ -58,14 +61,28 @@ export const getSerchCategory = (targetCategoryList, searchWord) => {
 
 // likes
 export const useAddCategoryLike = async (category, categoryType) => {
-	const id = uuidv4();
-	await addDoc(collection(db, "likeCategory"), {
-		id: id,
-		userId: auth.currentUser.uid,
-		categoryId: category.categoryId,
-		categoryType: categoryType,
-		updateAt: serverTimestamp(),
-	});
+	// const navigate = useNavigate();
+	// const { setError } = useErrorState();
+	try {
+		throw new FirebaseError("simulated-firebase-error", {
+			code: "simulated-firebase-error1",
+			message: "Simulated Firebase error message.",
+		});
+
+		const id = uuidv4();
+		await addDoc(collection(db, "likeCategory"), {
+			id: id,
+			userId: auth.currentUser.uid,
+			categoryId: category.categoryId,
+			categoryType: categoryType,
+			updateAt: serverTimestamp(),
+		});
+	} catch (error) {
+		// 	setError("Failed to add category like");
+		// 	navigate("/error");
+		// alert(error);
+		console.log(error);
+	}
 };
 
 export const useRemoveCategoryLike = async (category, categoryType) => {
