@@ -55,7 +55,7 @@ const NavSp = ({ isAuth }) => {
 				>
 					ホーム
 				</Link>
-				{!auth.currentUser || !isAuth ? (
+				{!auth.currentUser ? (
 					<>
 						<Link
 							className="app-header-nav-item app-header-nav-item-sp"

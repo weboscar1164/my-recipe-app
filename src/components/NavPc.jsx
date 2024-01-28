@@ -5,12 +5,12 @@ import { useScrollDirection } from "../utils/useScrollDirection";
 import { styles } from "../utils/Styled";
 import { Link } from "react-router-dom";
 
-const NavPc = ({ isAuth, handleToLikeCategoryList }) => {
+const NavPc = ({ isAuth }) => {
 	const { direction } = useScrollDirection();
-	console.log(isAuth);
-	console.log(typeof isAuth);
-	console.log(auth.currentUser);
-	console.log("Rendered!");
+	// console.log(isAuth);
+	// console.log(typeof isAuth);
+	// console.log(auth.currentUser);
+	// console.log("Rendered!");
 	return (
 		<nav
 			className="app-header-nav"
@@ -19,7 +19,7 @@ const NavPc = ({ isAuth, handleToLikeCategoryList }) => {
 			<Link className="app-header-nav-item" to="/">
 				ホーム
 			</Link>
-			{!auth.currentUser || !isAuth ? (
+			{!auth.currentUser ? (
 				<>
 					<Link className="app-header-nav-item" to="/signin">
 						ログイン

@@ -147,7 +147,7 @@ const App = () => {
 							/>
 						}
 					/>
-					<Route path="/signup" element={<SignUp />} />
+					<Route path="/signup" element={<SignUp setIsAuth={setIsAuth} />} />
 					<Route path="/signin" element={<SignIn setIsAuth={setIsAuth} />} />
 					<Route path="/signout" element={<SignOut setIsAuth={setIsAuth} />} />
 					<Route

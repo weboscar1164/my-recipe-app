@@ -23,11 +23,7 @@ function SignUp({ setIsAuth }) {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const userCredential = await createUserWithEmailAndPassword(
-				auth,
-				email,
-				password
-			);
+			await createUserWithEmailAndPassword(auth, email, password);
 			updateProfile(auth.currentUser, {
 				displayName: name,
 			});
