@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 
 const NavPc = ({ isAuth, handleToLikeCategoryList }) => {
 	const { direction } = useScrollDirection();
-
+	console.log(isAuth);
+	console.log(typeof isAuth);
+	console.log(auth.currentUser);
+	console.log("Rendered!");
 	return (
 		<nav
 			className="app-header-nav"
@@ -16,7 +19,7 @@ const NavPc = ({ isAuth, handleToLikeCategoryList }) => {
 			<Link className="app-header-nav-item" to="/">
 				ホーム
 			</Link>
-			{!auth.currentUser ? (
+			{!auth.currentUser || !isAuth ? (
 				<>
 					<Link className="app-header-nav-item" to="/signin">
 						ログイン
@@ -27,11 +30,7 @@ const NavPc = ({ isAuth, handleToLikeCategoryList }) => {
 				</>
 			) : (
 				<>
-					<Link
-						className="app-header-nav-item"
-						to="/likes"
-						// onClick={() => handleToLikeCategoryList()}
-					>
+					<Link className="app-header-nav-item" to="/likes">
 						お気に入り
 					</Link>
 					<Link className="app-header-nav-item" to="/signout">

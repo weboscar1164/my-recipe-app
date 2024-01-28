@@ -34,7 +34,7 @@ function SignIn({ setIsAuth }) {
 			);
 			if (userCredential.user) {
 				localStorage.setItem("isAuth", true);
-				setIsAuth(localStorage.getItem("isAuth"));
+				setIsAuth(Boolean(localStorage.getItem("isAuth")));
 				setIsError(false);
 				navigate("/");
 			}

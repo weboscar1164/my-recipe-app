@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
+import { auth } from "./firebase.config";
 
+import { ErrorStateProvider } from "./utils/useErrorState";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import SignIn from "./components/SignIn";
@@ -22,6 +24,7 @@ const App = () => {
 	const [currentCategory, setCurrentCategory] = useState({});
 	const [rankingList, setRankingList] = useState([]);
 	const [isOpen, setIsOpen] = useState(false);
+	const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
 	Modal.setAppElement("#root");
 
@@ -36,7 +39,15 @@ const App = () => {
 			setAllCategory(res.result);
 		};
 
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			setFirebaseInitialized(true);
+		});
+		const storedAuth = Boolean(localStorage.getItem("isAuth"));
+		if (storedAuth) {
+			setIsAuth(storedAuth);
+		}
 		fetchCategoryData();
+		return () => unsubscribe();
 	}, []);
 
 	useEffect(() => {
@@ -68,6 +79,7 @@ const App = () => {
 				preloadImages().then(() => setRankingLoading(false));
 			} catch (error) {
 				console.error("Error fetching ranking data:", error);
+
 				setRankingLoading(false); // エラー時もloadingをfalseに設定
 			}
 		};
@@ -104,60 +116,66 @@ const App = () => {
 	const handleOpenModal = () => {
 		setIsOpen(true);
 	};
+
+	if (!firebaseInitialized) {
+		return <div className="app-loading">Loading...</div>;
+	}
 	return (
 		<Router>
 			<Header isAuth={isAuth} setSerchWord={setSearchWord} />
-			<Routes>
-				<Route
-					path="/"
-					element={
-						<Home
-							isAuth={isAuth}
-							rankingLoading={rankingLoading}
-							setRankingLoading={setRankingLoading}
-							searchWord={searchWord}
-							setSearchWord={setSearchWord}
-							setCurrentCategory={setCurrentCategory}
-							setRankingList={setRankingList}
-							isOpen={isOpen}
-							allCategory={allCategory}
-							showCategory={showCategory}
-							setShowCategory={setShowCategory}
-							getRankingCategoryNumber={getRankingCategoryNumber}
-							handleOpenModal={handleOpenModal}
-							currentCategory={currentCategory}
-							rankingList={rankingList}
-						/>
-					}
-				/>
-				<Route path="/signup" element={<SignUp />} />
-				<Route path="/signin" element={<SignIn setIsAuth={setIsAuth} />} />
-				<Route path="/signout" element={<SignOut setIsAuth={setIsAuth} />} />
-				<Route
-					path="/likes"
-					element={
-						<Likes
-							setIsAuth={setIsAuth}
-							isAuth={isAuth}
-							rankingLoading={rankingLoading}
-							setRankingLoading={setRankingLoading}
-							searchWord={searchWord}
-							setSearchWord={setSearchWord}
-							setCurrentCategory={setCurrentCategory}
-							setRankingList={setRankingList}
-							isOpen={isOpen}
-							allCategory={allCategory}
-							showCategory={showCategory}
-							setShowCategory={setShowCategory}
-							getRankingCategoryNumber={getRankingCategoryNumber}
-							handleOpenModal={handleOpenModal}
-							currentCategory={currentCategory}
-							rankingList={rankingList}
-						/>
-					}
-				/>
-				<Route path="/error" element={<Error />} />
-			</Routes>
+			<ErrorStateProvider>
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<Home
+								isAuth={isAuth}
+								rankingLoading={rankingLoading}
+								setRankingLoading={setRankingLoading}
+								searchWord={searchWord}
+								setSearchWord={setSearchWord}
+								setCurrentCategory={setCurrentCategory}
+								setRankingList={setRankingList}
+								isOpen={isOpen}
+								allCategory={allCategory}
+								showCategory={showCategory}
+								setShowCategory={setShowCategory}
+								getRankingCategoryNumber={getRankingCategoryNumber}
+								handleOpenModal={handleOpenModal}
+								currentCategory={currentCategory}
+								rankingList={rankingList}
+							/>
+						}
+					/>
+					<Route path="/signup" element={<SignUp />} />
+					<Route path="/signin" element={<SignIn setIsAuth={setIsAuth} />} />
+					<Route path="/signout" element={<SignOut setIsAuth={setIsAuth} />} />
+					<Route
+						path="/likes"
+						element={
+							<Likes
+								setIsAuth={setIsAuth}
+								isAuth={isAuth}
+								rankingLoading={rankingLoading}
+								setRankingLoading={setRankingLoading}
+								searchWord={searchWord}
+								setSearchWord={setSearchWord}
+								setCurrentCategory={setCurrentCategory}
+								setRankingList={setRankingList}
+								isOpen={isOpen}
+								allCategory={allCategory}
+								showCategory={showCategory}
+								setShowCategory={setShowCategory}
+								getRankingCategoryNumber={getRankingCategoryNumber}
+								handleOpenModal={handleOpenModal}
+								currentCategory={currentCategory}
+								rankingList={rankingList}
+							/>
+						}
+					/>
+					<Route path="/error" element={<Error />} />
+				</Routes>
+			</ErrorStateProvider>
 			<footer>
 				<small>このアプリは楽天APIを使用しています。</small>
 			</footer>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./CategoryList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase.config";
 import { styles } from "../utils/Styled";
 import { isEmpty } from "../utils/helpers";
@@ -11,6 +12,7 @@ import {
 	useAddCategoryLike,
 	useRemoveCategoryLike,
 } from "../utils/useHandleData";
+import { useErrorState } from "../utils/useErrorState";
 
 const CategoryList = ({
 	showCategory,
@@ -20,6 +22,8 @@ const CategoryList = ({
 	handleOpenModal,
 }) => {
 	const [isLike, setIsLike] = useState([]);
+	const navigate = useNavigate();
+	const { setErrorState } = useErrorState();
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -56,9 +60,19 @@ const CategoryList = ({
 		}
 		const currentIsLike = await getIsCategoryLike(category, categoryType);
 		if (currentIsLike) {
-			await useRemoveCategoryLike(category, categoryType);
+			try {
+				await useRemoveCategoryLike(category, categoryType);
+			} catch (error) {
+				setErrorState(error.code);
+				navigate("/error");
+			}
 		} else {
-			await useAddCategoryLike(category, categoryType);
+			try {
+				await useAddCategoryLike(category, categoryType);
+			} catch (error) {
+				setErrorState(error.code);
+				navigate("/error");
+			}
 		}
 		// 更新されたいいね状態を取得
 		const updatedIsLike = await getIsCategoryLike(category, categoryType);
