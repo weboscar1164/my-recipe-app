@@ -1,8 +1,12 @@
+/** @jsxImportSource @emotion/react */
 import { useState } from "react";
 import "./Auth.css";
+import { styles } from "../utils/Styled";
 import { useNavigate } from "react-router-dom";
 import { updateProfile, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.config";
+import { useErrorState } from "../utils/useErrorState";
+import { usePopUpContext } from "../utils/usePopUp";
 
 function SignUp({ setIsAuth }) {
 	const [formData, setFormData] = useState({
@@ -10,8 +14,11 @@ function SignUp({ setIsAuth }) {
 		email: "",
 		password: "",
 	});
+	const [isDuplicateError, setIsDuplicateError] = useState(false);
 	const { name, email, password } = formData;
 	const navigate = useNavigate();
+	const { setErrorState } = useErrorState();
+	const { setIsPopUp } = usePopUpContext();
 
 	const onChange = (e) => {
 		setFormData({
@@ -29,9 +36,16 @@ function SignUp({ setIsAuth }) {
 			});
 			localStorage.setItem("isAuth", true);
 			setIsAuth(localStorage.getItem("isAuth"));
+			setIsDuplicateError(false);
+			setIsPopUp("signup");
 			navigate("/");
 		} catch (error) {
-			console.log(error);
+			if (error.code === "auth/email-already-in-use") {
+				setIsDuplicateError(true);
+			} else {
+				setErrorState(error.code);
+				navigate("/error");
+			}
 		}
 	};
 
@@ -39,6 +53,12 @@ function SignUp({ setIsAuth }) {
 		<div className="container auth-container">
 			<div className="auth-wrapper">
 				<h2>新規登録</h2>
+				<p
+					className="auth-error-message"
+					css={[isDuplicateError && styles.authErrorMessageActive]}
+				>
+					このメールアドレスは既に使用されています
+				</p>
 				<form onSubmit={onSubmit}>
 					<label htmlFor="name">お名前</label>
 					<input

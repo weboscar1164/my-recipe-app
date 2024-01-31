@@ -7,33 +7,50 @@ import { Link } from "react-router-dom";
 
 const NavPc = ({ isAuth }) => {
 	const { direction } = useScrollDirection();
-	// console.log(isAuth);
-	// console.log(typeof isAuth);
-	// console.log(auth.currentUser);
-	// console.log("Rendered!");
+
 	return (
 		<nav
 			className="app-header-nav"
 			css={[direction === "down" && styles.upNav]}
 		>
-			<Link className="app-header-nav-item" to="/">
+			<Link
+				className="app-header-nav-item"
+				to="/"
+				onClick={() => setCurrentCategory({})}
+			>
 				ホーム
 			</Link>
 			{!auth.currentUser ? (
 				<>
-					<Link className="app-header-nav-item" to="/signin">
+					<Link
+						className="app-header-nav-item"
+						to="/signin"
+						onClick={() => setCurrentCategory({})}
+					>
 						ログイン
 					</Link>
-					<Link className="app-header-nav-item" to="/signup">
+					<Link
+						className="app-header-nav-item"
+						to="/signup"
+						onClick={() => setCurrentCategory({})}
+					>
 						新規登録
 					</Link>
 				</>
 			) : (
 				<>
-					<Link className="app-header-nav-item" to="/likes">
+					<Link
+						className="app-header-nav-item"
+						to="/likes"
+						onClick={() => setCurrentCategory({})}
+					>
 						お気に入り
 					</Link>
-					<Link className="app-header-nav-item" to="/signout">
+					<Link
+						className="app-header-nav-item"
+						to="/signout"
+						onClick={() => setCurrentCategory({})}
+					>
 						ログアウト
 					</Link>
 				</>

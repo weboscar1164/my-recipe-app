@@ -8,6 +8,10 @@
     margin-bottom: 10px;
 }
 
+.app-ranking-loading {
+    padding-top: 150px;
+}
+
 .app-ranking-card {
     padding: 15px;
     background: #f1bf74;

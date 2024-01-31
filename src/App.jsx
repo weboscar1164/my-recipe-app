@@ -12,8 +12,10 @@ import SignOut from "./components/SignOut";
 import Likes from "./components/Likes";
 import Error from "./components/Error";
 import ModalComponent from "./components/ModalComponent";
+import PopUp from "./components/PopUp";
 import { getApiData } from "./utils/api";
 import { isEmpty } from "./utils/helpers";
+import { PopUpProvider } from "./utils/usePopUp";
 
 const App = () => {
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -117,69 +119,79 @@ const App = () => {
 		setIsOpen(true);
 	};
 
+	const handlePopUp = (action) => {
+		setIsPopUp(action);
+	};
+
 	if (!firebaseInitialized) {
 		return <div className="app-loading">Loading...</div>;
 	}
 	return (
 		<Router>
-			<Header isAuth={isAuth} setSerchWord={setSearchWord} />
-			<ErrorStateProvider>
-				<Routes>
-					<Route
-						path="/"
-						element={
-							<Home
-								isAuth={isAuth}
-								rankingLoading={rankingLoading}
-								setRankingLoading={setRankingLoading}
-								searchWord={searchWord}
-								setSearchWord={setSearchWord}
-								setCurrentCategory={setCurrentCategory}
-								setRankingList={setRankingList}
-								isOpen={isOpen}
-								allCategory={allCategory}
-								showCategory={showCategory}
-								setShowCategory={setShowCategory}
-								getRankingCategoryNumber={getRankingCategoryNumber}
-								handleOpenModal={handleOpenModal}
-								currentCategory={currentCategory}
-								rankingList={rankingList}
-							/>
-						}
-					/>
-					<Route path="/signup" element={<SignUp setIsAuth={setIsAuth} />} />
-					<Route path="/signin" element={<SignIn setIsAuth={setIsAuth} />} />
-					<Route path="/signout" element={<SignOut setIsAuth={setIsAuth} />} />
-					<Route
-						path="/likes"
-						element={
-							<Likes
-								setIsAuth={setIsAuth}
-								isAuth={isAuth}
-								rankingLoading={rankingLoading}
-								setRankingLoading={setRankingLoading}
-								searchWord={searchWord}
-								setSearchWord={setSearchWord}
-								setCurrentCategory={setCurrentCategory}
-								setRankingList={setRankingList}
-								isOpen={isOpen}
-								allCategory={allCategory}
-								showCategory={showCategory}
-								setShowCategory={setShowCategory}
-								getRankingCategoryNumber={getRankingCategoryNumber}
-								handleOpenModal={handleOpenModal}
-								currentCategory={currentCategory}
-								rankingList={rankingList}
-							/>
-						}
-					/>
-					<Route path="/error" element={<Error />} />
-				</Routes>
-			</ErrorStateProvider>
-			<footer>
-				<small>このアプリは楽天APIを使用しています。</small>
-			</footer>
-			<ModalComponent isOpen={isOpen} handleCloseModal={handleCloseModal} />
+			<PopUpProvider>
+				<Header isAuth={isAuth} setSerchWord={setSearchWord} />
+				<ErrorStateProvider>
+					<Routes>
+						<Route
+							path="/"
+							element={
+								<Home
+									isAuth={isAuth}
+									rankingLoading={rankingLoading}
+									setRankingLoading={setRankingLoading}
+									searchWord={searchWord}
+									setSearchWord={setSearchWord}
+									setCurrentCategory={setCurrentCategory}
+									setRankingList={setRankingList}
+									isOpen={isOpen}
+									allCategory={allCategory}
+									showCategory={showCategory}
+									setShowCategory={setShowCategory}
+									getRankingCategoryNumber={getRankingCategoryNumber}
+									handleOpenModal={handleOpenModal}
+									currentCategory={currentCategory}
+									rankingList={rankingList}
+								/>
+							}
+						/>
+						<Route path="/signup" element={<SignUp setIsAuth={setIsAuth} />} />
+						<Route path="/signin" element={<SignIn setIsAuth={setIsAuth} />} />
+						<Route
+							path="/signout"
+							element={<SignOut setIsAuth={setIsAuth} />}
+						/>
+						<Route
+							path="/likes"
+							element={
+								<Likes
+									setIsAuth={setIsAuth}
+									isAuth={isAuth}
+									rankingLoading={rankingLoading}
+									setRankingLoading={setRankingLoading}
+									searchWord={searchWord}
+									setSearchWord={setSearchWord}
+									setCurrentCategory={setCurrentCategory}
+									setRankingList={setRankingList}
+									isOpen={isOpen}
+									allCategory={allCategory}
+									showCategory={showCategory}
+									setShowCategory={setShowCategory}
+									getRankingCategoryNumber={getRankingCategoryNumber}
+									handleOpenModal={handleOpenModal}
+									currentCategory={currentCategory}
+									rankingList={rankingList}
+								/>
+							}
+						/>
+						<Route path="/error" element={<Error />} />
+					</Routes>
+				</ErrorStateProvider>
+				<footer>
+					<small>このアプリは楽天APIを使用しています。</small>
+				</footer>
+				<PopUp />
+				<ModalComponent isOpen={isOpen} handleCloseModal={handleCloseModal} />
+			</PopUpProvider>
 		</Router>
 	);
 };

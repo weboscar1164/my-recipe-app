@@ -12,6 +12,7 @@ import {
 	useAddCategoryLike,
 	useRemoveCategoryLike,
 } from "../utils/useHandleData";
+import { usePopUpContext } from "../utils/usePopUp";
 import { useErrorState } from "../utils/useErrorState";
 
 const CategoryList = ({
@@ -23,6 +24,7 @@ const CategoryList = ({
 }) => {
 	const [isLike, setIsLike] = useState([]);
 	const navigate = useNavigate();
+	const { isPopUp, setIsPopUp } = usePopUpContext();
 	const { setErrorState } = useErrorState();
 
 	useEffect(() => {
@@ -40,7 +42,7 @@ const CategoryList = ({
 			setIsLike(likes);
 		};
 		fetchData();
-	}, [showCategory]);
+	}, [showCategory, isPopUp]);
 
 	const onCategoryClickHandler = (category, categoryType) => {
 		// 楽天レシピランキングAPIのURL生成用カテゴリ番号を付与
@@ -62,6 +64,7 @@ const CategoryList = ({
 		if (currentIsLike) {
 			try {
 				await useRemoveCategoryLike(category, categoryType);
+				setIsPopUp("removelike");
 			} catch (error) {
 				setErrorState(error.code);
 				navigate("/error");
@@ -69,6 +72,7 @@ const CategoryList = ({
 		} else {
 			try {
 				await useAddCategoryLike(category, categoryType);
+				setIsPopUp("addlike");
 			} catch (error) {
 				setErrorState(error.code);
 				navigate("/error");

@@ -6,13 +6,17 @@ import { styles } from "../utils/Styled";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.config";
+import { usePopUpContext } from "../utils/usePopUp";
+import { useErrorState } from "../utils/useErrorState";
 
 function SignIn({ setIsAuth }) {
 	const [formData, setFormData] = useState({
 		email: "",
 		password: "",
 	});
-	const [isError, setIsError] = useState(false);
+	const [isLoginError, setIsLoginError] = useState(false);
+	const { setIsPopUp } = usePopUpContext();
+	const { setErrorState } = useErrorState();
 
 	const { email, password } = formData;
 	const navigate = useNavigate();
@@ -35,11 +39,17 @@ function SignIn({ setIsAuth }) {
 			if (userCredential.user) {
 				localStorage.setItem("isAuth", true);
 				setIsAuth(Boolean(localStorage.getItem("isAuth")));
-				setIsError(false);
+				setIsLoginError(false);
+				setIsPopUp("login");
 				navigate("/");
 			}
 		} catch (error) {
-			setIsError(true);
+			if (error.code == "auth/invalid-credential") {
+				setIsLoginError(true);
+			} else {
+				setErrorState(error.code);
+				navigate("/error");
+			}
 		}
 	};
 
@@ -49,7 +59,7 @@ function SignIn({ setIsAuth }) {
 				<h2>ログイン</h2>
 				<p
 					className="auth-error-message"
-					css={[isError && styles.authErrorMessageActive]}
+					css={[isLoginError && styles.authErrorMessageActive]}
 				>
 					メールアドレスかパスワードが間違っています。
 				</p>

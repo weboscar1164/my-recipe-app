@@ -1,0 +1,39 @@
+.app-popup-wrapper {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    z-index: 1000;
+    transform: translateX(-50%);
+
+}
+
+.app-popup {
+    display: none;
+    padding: 10px 20px;
+    background: rgb(143, 216, 83);
+    border-radius: 8px;
+    color: #fff;
+}
+
+.app-popup-active {
+    display: block;
+    animation: popup 1.5s ease-in forwards ;
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

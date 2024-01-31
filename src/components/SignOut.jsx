@@ -20,7 +20,7 @@ const SignOut = ({ setIsAuth }) => {
 		<div className="container auth-container">
 			<div className="auth-wrapper">
 				<form onSubmit={onSubmit}>
-					<p>ログアウトしますか？</p>
+					<h2>ログアウトしますか？</h2>
 					<button type="submit">ログアウト</button>
 				</form>
 			</div>

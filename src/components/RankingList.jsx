@@ -1,11 +1,11 @@
 import React from "react";
 import "./RankingList.css";
 
-const RankingList = ({ rankingoading, currentCategory, rankingList }) => {
+const RankingList = ({ rankingLoading, currentCategory, rankingList }) => {
 	return (
 		<>
-			{rankingoading ? (
-				<h2>ロード中...</h2>
+			{rankingLoading ? (
+				<h2 className="app-lanking-loading">ロード中...</h2>
 			) : (
 				<div className="container app-ranking-container">
 					<h2 className="app-ranking-title">{currentCategory.categoryName}</h2>

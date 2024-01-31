@@ -18,6 +18,7 @@ const NavSp = ({ isAuth }) => {
 
 	const handleLinkClick = () => {
 		setOpenNav(false);
+		setCurrentCategory({});
 	};
 
 	return (
