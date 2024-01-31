@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { isEmpty } from "../utils/helpers";
 import { useRemoveCategoryLike } from "../utils/useHandleData";
+import { useErrorState } from "../utils/useErrorState";
+import { usePopUpContext } from "../utils/usePopUp";
 
 const LikeCategoryList = ({
 	showLikeCategory,
@@ -11,6 +13,9 @@ const LikeCategoryList = ({
 	setCurrentCategory,
 	getRankingCategoryNumber,
 }) => {
+	const { isPopUp, setIsPopUp } = usePopUpContext();
+	const { setErrorState } = useErrorState();
+
 	const onCategoryClickHandler = (category, categoryType) => {
 		// 楽天レシピランキングAPIのURL生成用カテゴリ番号を付与
 		const categoryNumber = getRankingCategoryNumber(category, categoryType);
@@ -44,8 +49,10 @@ const LikeCategoryList = ({
 
 			// Firestore からの削除
 			useRemoveCategoryLike(category, categoryType);
+			setIsPopUp("removelike");
 		} catch (error) {
-			console.error("お気に入りリストを削除できませんでした。:", error);
+			setErrorState(error.code);
+			navigate("/error");
 		}
 	};
 

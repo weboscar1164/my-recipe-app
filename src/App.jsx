@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { auth } from "./firebase.config";
+import "./App.css";
 
 import { ErrorStateProvider } from "./utils/useErrorState";
 import Header from "./components/Header";
@@ -117,10 +118,6 @@ const App = () => {
 
 	const handleOpenModal = () => {
 		setIsOpen(true);
-	};
-
-	const handlePopUp = (action) => {
-		setIsPopUp(action);
 	};
 
 	if (!firebaseInitialized) {
