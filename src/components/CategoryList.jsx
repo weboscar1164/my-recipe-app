@@ -42,7 +42,7 @@ const CategoryList = ({
 			setIsLike(likes);
 		};
 		fetchData();
-	}, [showCategory, isPopUp]);
+	}, [showCategory, isPopUp, isLike]);
 
 	const onCategoryClickHandler = (category, categoryType) => {
 		// 楽天レシピランキングAPIのURL生成用カテゴリ番号を付与
@@ -60,35 +60,29 @@ const CategoryList = ({
 			handleOpenModal();
 			return;
 		}
-		const currentIsLike = await getIsCategoryLike(category, categoryType);
-		if (currentIsLike) {
-			try {
-				await useRemoveCategoryLike(category, categoryType);
-				setIsPopUp("removelike");
-			} catch (error) {
-				setErrorState(error.code);
-				navigate("/error");
-			}
-		} else {
-			try {
-				await useAddCategoryLike(category, categoryType);
+
+		const updatedIsLike = !(await getIsCategoryLike(category, categoryType));
+		try {
+			if (updatedIsLike) {
 				setIsPopUp("addlike");
-			} catch (error) {
-				setErrorState(error.code);
-				navigate("/error");
+				await useAddCategoryLike(category, categoryType);
+			} else {
+				setIsPopUp("removelike");
+				await useRemoveCategoryLike(category, categoryType);
 			}
+
+			setIsLike((prevIsLike) =>
+				prevIsLike.map((item) =>
+					item.categoryType === categoryType &&
+					item.category.categoryId === category.categoryId
+						? { ...item, isLike: updatedIsLike }
+						: item
+				)
+			);
+		} catch (error) {
+			setErrorState(error.code);
+			navigate("/error");
 		}
-		// 更新されたいいね状態を取得
-		const updatedIsLike = await getIsCategoryLike(category, categoryType);
-		// 現在の状態をコピーして、該当する要素を更新
-		setIsLike((prevIsLike) =>
-			prevIsLike.map((item) =>
-				item.categoryType === categoryType &&
-				item.category.categoryId === category.categoryId
-					? { ...item, isLike: updatedIsLike }
-					: item
-			)
-		);
 	};
 
 	const renderContent = () => {
