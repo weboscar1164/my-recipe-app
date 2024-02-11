@@ -4,7 +4,6 @@ import Modal from "react-modal";
 import { auth } from "./firebase.config";
 import "./App.css";
 
-import { ErrorStateProvider } from "./utils/useErrorState";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import SignIn from "./components/SignIn";
@@ -14,9 +13,12 @@ import Likes from "./components/Likes";
 import Error from "./components/Error";
 import ModalComponent from "./components/ModalComponent";
 import PopUp from "./components/PopUp";
+import Loading from "./components/Loading";
+
 import { getApiData } from "./utils/api";
 import { isEmpty } from "./utils/helpers";
 import { PopUpProvider } from "./utils/usePopUp";
+import { ErrorStateProvider } from "./utils/useErrorState";
 
 const App = () => {
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -42,6 +44,7 @@ const App = () => {
 			setAllCategory(res.result);
 		};
 
+		// firebaseが初期化されてから画面を表示する
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			setFirebaseInitialized(true);
 		});
@@ -121,7 +124,7 @@ const App = () => {
 	};
 
 	if (!firebaseInitialized) {
-		return <div className="app-loading">Loading...</div>;
+		return <Loading />;
 	}
 	return (
 		<Router>

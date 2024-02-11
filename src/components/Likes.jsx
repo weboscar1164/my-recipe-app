@@ -37,6 +37,8 @@ const Likes = ({
 			setCurrentAutherLikeList(fetchedData);
 		} catch (error) {
 			console.error("Error fetching data:", error);
+			setErrorState(error.code);
+			navigate("/Error");
 		}
 	};
 

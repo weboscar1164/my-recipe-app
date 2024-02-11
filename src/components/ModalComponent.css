@@ -1,7 +1,11 @@
+.modal-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .modal-button {
     width: 100px;
     padding: 10px;
-    margin-right: 20px;
     border-radius: 7px;
     border: none;
     color: #fff;

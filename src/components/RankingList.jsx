@@ -1,11 +1,12 @@
 import React from "react";
 import "./RankingList.css";
+import Loading from "./Loading";
 
 const RankingList = ({ rankingLoading, currentCategory, rankingList }) => {
 	return (
 		<>
 			{rankingLoading ? (
-				<h2 className="app-lanking-loading">ロード中...</h2>
+				<Loading />
 			) : (
 				<div className="container app-ranking-container">
 					<h2 className="app-ranking-title">{currentCategory.categoryName}</h2>

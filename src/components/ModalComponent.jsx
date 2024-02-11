@@ -4,6 +4,7 @@ import "./ModalComponent.css";
 import { useNavigate } from "react-router-dom";
 
 const customStyles = {
+	// react-modal仕様で、overlay,contentで括られる
 	overlay: {
 		zIndex: 100,
 	},
@@ -33,15 +34,17 @@ const ModalComponent = ({ isOpen, handleCloseModal }) => {
 				<br />
 				ログインしてください。
 			</p>
-			<button
-				className="modal-button modal-button-close"
-				onClick={() => handleCloseModal()}
-			>
-				キャンセル
-			</button>
-			<button className="modal-button modal-button-action" onClick={onLogin}>
-				ログイン
-			</button>
+			<div className="modal-button-wrapper">
+				<button
+					className="modal-button modal-button-close"
+					onClick={() => handleCloseModal()}
+				>
+					キャンセル
+				</button>
+				<button className="modal-button modal-button-action" onClick={onLogin}>
+					ログイン
+				</button>
+			</div>
 		</Modal>
 	);
 };
