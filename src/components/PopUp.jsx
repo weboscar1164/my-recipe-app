@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./PopUp.css";
 import { usePopUpContext } from "../utils/usePopUp.jsx";
 
@@ -30,6 +32,7 @@ const PopUp = () => {
 		<div className="app-popup-wrapper">
 			{isPopUp && (
 				<div className="app-popup app-popup-active">
+					<FontAwesomeIcon className="app-popup-icon " icon={faCheckCircle} />
 					{popUpMessage[isPopUp]}
 				</div>
 			)}

@@ -15,6 +15,10 @@
     color: #fff;
 }
 
+.app-popup-icon {
+    margin-right: 5px;
+}
+
 .app-popup-active {
     display: block;
     animation: popup 1.5s ease-in forwards ;
