@@ -24,19 +24,19 @@ const Header = ({ fetchLikeData }) => {
 						<small>楽天レシピ検索を簡単に</small>
 						<h1>R-Recipeeee!</h1>
 					</div>
+					{isSp ? (
+						<NavSp
+							fetchLikeData={fetchLikeData}
+							handleToLikeCategoryList={handleToLikeCategoryList}
+						/>
+					) : (
+						<NavPc
+							fetchLikeData={fetchLikeData}
+							handleToLikeCategoryList={handleToLikeCategoryList}
+						/>
+					)}
 				</div>
 			</header>
-			{isSp ? (
-				<NavSp
-					fetchLikeData={fetchLikeData}
-					handleToLikeCategoryList={handleToLikeCategoryList}
-				/>
-			) : (
-				<NavPc
-					fetchLikeData={fetchLikeData}
-					handleToLikeCategoryList={handleToLikeCategoryList}
-				/>
-			)}
 		</>
 	);
 };

@@ -1,11 +1,16 @@
 .app-search-bar {
     background: #FA6946;
     position: fixed;
-    top: 77px;
+    top: 76px;
     width: 100%;
     transition: all .3s;
     z-index: 1;
 }
+
+.app-search-bar-scroll {
+    transform: translateY(-76px);
+}
+
 .app-search-bar-container {
     padding: 10px 0 13px;
 }

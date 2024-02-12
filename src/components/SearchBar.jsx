@@ -1,7 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import "./SearchBar.css";
 import { useScrollDirection } from "../utils/useScrollDirection";
-import { styles } from "../utils/Styled";
 
 const SearchBar = ({
 	setRankingLoading,
@@ -21,8 +19,9 @@ const SearchBar = ({
 
 	return (
 		<div
-			className="app-search-bar"
-			css={[direction === "down" && styles.hideHeader]}
+			className={`app-search-bar ${
+				direction === "down" && "app-search-bar-scroll"
+			}`}
 		>
 			<div className="container app-search-bar-container">
 				<input
