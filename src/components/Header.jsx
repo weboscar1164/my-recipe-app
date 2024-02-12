@@ -5,7 +5,7 @@ import { useScrollDirection } from "../utils/useScrollDirection";
 import { mediaQuery, useMediaQuery } from "../utils/useMediaQuery";
 import { useNavigate } from "react-router-dom";
 
-const Header = ({ isAuth, fetchLikeData }) => {
+const Header = ({ fetchLikeData }) => {
 	const { direction } = useScrollDirection();
 	const navigate = useNavigate();
 	const isSp = useMediaQuery(mediaQuery.sp);
@@ -28,13 +28,11 @@ const Header = ({ isAuth, fetchLikeData }) => {
 			</header>
 			{isSp ? (
 				<NavSp
-					isAuth={isAuth}
 					fetchLikeData={fetchLikeData}
 					handleToLikeCategoryList={handleToLikeCategoryList}
 				/>
 			) : (
 				<NavPc
-					isAuth={isAuth}
 					fetchLikeData={fetchLikeData}
 					handleToLikeCategoryList={handleToLikeCategoryList}
 				/>

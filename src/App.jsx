@@ -21,7 +21,6 @@ import { PopUpProvider } from "./utils/usePopUp";
 import { ErrorStateProvider } from "./utils/useErrorState";
 
 const App = () => {
-	const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 	const [allCategory, setAllCategory] = useState([]);
 	const [rankingLoading, setRankingLoading] = useState(true);
 	const [searchWord, setSearchWord] = useState("");
@@ -48,10 +47,6 @@ const App = () => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			setFirebaseInitialized(true);
 		});
-		const storedAuth = Boolean(localStorage.getItem("isAuth"));
-		if (storedAuth) {
-			setIsAuth(storedAuth);
-		}
 		fetchCategoryData();
 		return () => unsubscribe();
 	}, []);
@@ -129,14 +124,13 @@ const App = () => {
 	return (
 		<Router>
 			<PopUpProvider>
-				<Header isAuth={isAuth} setSerchWord={setSearchWord} />
+				<Header setSerchWord={setSearchWord} />
 				<ErrorStateProvider>
 					<Routes>
 						<Route
 							path="/"
 							element={
 								<Home
-									isAuth={isAuth}
 									rankingLoading={rankingLoading}
 									setRankingLoading={setRankingLoading}
 									searchWord={searchWord}
@@ -154,18 +148,13 @@ const App = () => {
 								/>
 							}
 						/>
-						<Route path="/signup" element={<SignUp setIsAuth={setIsAuth} />} />
-						<Route path="/signin" element={<SignIn setIsAuth={setIsAuth} />} />
-						<Route
-							path="/signout"
-							element={<SignOut setIsAuth={setIsAuth} />}
-						/>
+						<Route path="/signup" element={<SignUp />} />
+						<Route path="/signin" element={<SignIn />} />
+						<Route path="/signout" element={<SignOut />} />
 						<Route
 							path="/likes"
 							element={
 								<Likes
-									setIsAuth={setIsAuth}
-									isAuth={isAuth}
 									rankingLoading={rankingLoading}
 									setRankingLoading={setRankingLoading}
 									searchWord={searchWord}

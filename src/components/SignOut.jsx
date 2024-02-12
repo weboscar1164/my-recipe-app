@@ -4,7 +4,7 @@ import { auth } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
 import { usePopUpContext } from "../utils/usePopUp";
 
-const SignOut = ({ setIsAuth }) => {
+const SignOut = () => {
 	const { setIsPopUp } = usePopUpContext();
 
 	const navigate = useNavigate();
@@ -20,7 +20,6 @@ const SignOut = ({ setIsAuth }) => {
 		try {
 			await auth.signOut();
 			localStorage.setItem("isAuth", false);
-			setIsAuth(localStorage.getItem("isAuth"));
 			setIsPopUp("logout");
 			navigate("/");
 		} catch (error) {

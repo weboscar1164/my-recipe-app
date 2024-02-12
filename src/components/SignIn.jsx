@@ -7,7 +7,7 @@ import { auth } from "../firebase.config";
 import { usePopUpContext } from "../utils/usePopUp";
 import { useErrorState } from "../utils/useErrorState";
 
-function SignIn({ setIsAuth }) {
+function SignIn() {
 	const [formData, setFormData] = useState({
 		email: "",
 		password: "",
@@ -36,7 +36,6 @@ function SignIn({ setIsAuth }) {
 			);
 			if (userCredential.user) {
 				localStorage.setItem("isAuth", true);
-				setIsAuth(Boolean(localStorage.getItem("isAuth")));
 				setIsLoginError(false);
 				setIsPopUp("login");
 				navigate("/");

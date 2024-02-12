@@ -6,7 +6,7 @@ import { auth } from "../firebase.config";
 import { useErrorState } from "../utils/useErrorState";
 import { usePopUpContext } from "../utils/usePopUp";
 
-function SignUp({ setIsAuth }) {
+function SignUp() {
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -33,7 +33,6 @@ function SignUp({ setIsAuth }) {
 				displayName: name,
 			});
 			localStorage.setItem("isAuth", true);
-			setIsAuth(localStorage.getItem("isAuth"));
 			setIsDuplicateError(false);
 			setIsPopUp("signup");
 			navigate("/");
