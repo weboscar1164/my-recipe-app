@@ -1,7 +1,5 @@
-/** @jsxImportSource @emotion/react */
 import { useState } from "react";
 import "./Auth.css";
-import { styles } from "../utils/Styled";
 import { useNavigate } from "react-router-dom";
 import { updateProfile, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.config";
@@ -54,8 +52,9 @@ function SignUp({ setIsAuth }) {
 			<div className="auth-wrapper">
 				<h2>新規登録</h2>
 				<p
-					className="auth-error-message"
-					css={[isDuplicateError && styles.authErrorMessageActive]}
+					className={`auth-error-message ${
+						isDuplicateError && "auth-error-message-active"
+					}`}
 				>
 					このメールアドレスは既に使用されています
 				</p>

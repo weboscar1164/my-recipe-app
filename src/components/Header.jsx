@@ -1,9 +1,7 @@
-/** @jsxImportSource @emotion/react */
 import "./Header.css";
 import NavPc from "./NavPc";
 import NavSp from "./NavSp";
 import { useScrollDirection } from "../utils/useScrollDirection";
-import { styles } from "../utils/Styled";
 import { mediaQuery, useMediaQuery } from "../utils/useMediaQuery";
 import { useNavigate } from "react-router-dom";
 
@@ -19,8 +17,7 @@ const Header = ({ isAuth, fetchLikeData }) => {
 	return (
 		<>
 			<header
-				className="app-header"
-				css={[direction === "down" && styles.hideHeader]}
+				className={`app-header ${direction === "down" && "app-header-hide"}`}
 			>
 				<div className="container app-header-container">
 					<div className="app-header-title">

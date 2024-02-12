@@ -1,8 +1,6 @@
-/** @jsxImportSource @emotion/react */
 import { useState } from "react";
 import "./Auth.css";
 
-import { styles } from "../utils/Styled";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.config";
@@ -58,8 +56,9 @@ function SignIn({ setIsAuth }) {
 			<div className="auth-wrapper">
 				<h2>ログイン</h2>
 				<p
-					className="auth-error-message"
-					css={[isLoginError && styles.authErrorMessageActive]}
+					className={`auth-error-message ${
+						isLoginError && "auth-error-message-active"
+					}`}
 				>
 					メールアドレスかパスワードが間違っています。
 				</p>

@@ -1,17 +1,16 @@
-/** @jsxImportSource @emotion/react */
 import { auth } from "../firebase.config";
 import "./Header.css";
 import { useScrollDirection } from "../utils/useScrollDirection";
-import { styles } from "../utils/Styled";
 import { Link } from "react-router-dom";
 
-const NavPc = ({ isAuth }) => {
+const NavPc = () => {
 	const { direction } = useScrollDirection();
 
 	return (
 		<nav
-			className="app-header-nav"
-			css={[direction === "down" && styles.upNav]}
+			className={`app-header-nav ${
+				direction === "down" && "app-header-nav-scroll"
+			}`}
 		>
 			<Link
 				className="app-header-nav-item"

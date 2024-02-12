@@ -1,14 +1,12 @@
-/** @jsxImportSource @emotion/react */
 import { useState } from "react";
 import "./Header.css";
 import { auth } from "../firebase.config";
 import { useScrollDirection } from "../utils/useScrollDirection";
-import { styles } from "../utils/Styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const NavSp = ({ isAuth }) => {
+const NavSp = () => {
 	const [openNav, setOpenNav] = useState(false);
 	const { direction } = useScrollDirection();
 
@@ -24,13 +22,15 @@ const NavSp = ({ isAuth }) => {
 	return (
 		<>
 			<div
-				className="app-header-navbutton"
-				css={[direction === "down" && styles.upNav]}
+				className={`app-header-navbutton ${
+					direction === "down" && "app-header-nav-scroll"
+				}`}
 				onClick={() => handleToggleNav()}
 			>
 				<div
-					className="app-header-navbutton-wrapper"
-					css={[openNav && styles.navigationButtonActive]}
+					className={`app-header-navbutton-wrapper ${
+						openNav && "app-header-navbutton-wrapper-active"
+					}`}
 				>
 					<div className="app-header-navbutton-open">
 						<small>Menu</small>
@@ -46,8 +46,7 @@ const NavSp = ({ isAuth }) => {
 				</div>
 			</div>
 			<nav
-				className="app-header-nav-sp"
-				css={[openNav && styles.activeNavigation]}
+				className={`app-header-nav-sp ${openNav && "app-header-nav-sp-active"}`}
 			>
 				<Link
 					className="app-header-nav-item app-header-nav-item-sp"

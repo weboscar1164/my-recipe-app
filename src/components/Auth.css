@@ -54,3 +54,7 @@
     color: red;
     display: none;
 }
+
+.auth-error-message-active {
+    display: block;
+}
