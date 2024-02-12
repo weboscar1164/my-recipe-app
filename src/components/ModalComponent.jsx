@@ -18,6 +18,7 @@ const customStyles = {
 		minWidth: "40%",
 		background: "#fae4a7",
 		border: "none",
+		boxShadow: "0px 5px 15px 0px rgba(0, 0, 0, 0.15)",
 	},
 };
 const ModalComponent = ({ isOpen, handleCloseModal }) => {

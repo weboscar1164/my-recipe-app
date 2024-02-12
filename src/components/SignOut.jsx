@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Auth.css";
 import { auth } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
@@ -8,10 +8,17 @@ const SignOut = ({ setIsAuth }) => {
 	const { setIsPopUp } = usePopUpContext();
 
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (!auth.currentUser) {
+			// 未ログイン時にホーム画面にリダイレクト
+			navigate("/");
+		}
+	}, []);
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			auth.signOut();
+			await auth.signOut();
 			localStorage.setItem("isAuth", false);
 			setIsAuth(localStorage.getItem("isAuth"));
 			setIsPopUp("logout");
