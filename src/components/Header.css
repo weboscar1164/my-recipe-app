@@ -3,7 +3,7 @@
     position: fixed;
     width: 100%;
     transition: all .3s;
-    z-index: 1;
+    z-index: 2;
 }
 
 .app-header-hide {
@@ -41,7 +41,7 @@ font-size: 13px;
 }
 
 .app-header-nav-scroll {
-    transform: translateY(-20px);
+    transform: translateY(55px);
 }
 
 .app-header-nav-item {
@@ -78,7 +78,7 @@ font-size: 13px;
     color: #fff;
     position: fixed;
     right: 10%;
-    top: 20px;
+    top: 25px;
     height: 50px;
     z-index: 1000;
     transition: transform .3s;

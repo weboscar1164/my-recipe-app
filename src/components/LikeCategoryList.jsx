@@ -13,7 +13,7 @@ const LikeCategoryList = ({
 	setCurrentCategory,
 	getRankingCategoryNumber,
 }) => {
-	const { isPopUp, setIsPopUp } = usePopUpContext();
+	const { setIsPopUp } = usePopUpContext();
 	const { setErrorState } = useErrorState();
 
 	const onCategoryClickHandler = (category, categoryType) => {
@@ -28,6 +28,7 @@ const LikeCategoryList = ({
 	};
 
 	const onCategoryDeleteHandler = async (category, categoryType) => {
+		console.log(category);
 		try {
 			const updatedLikeCategory = { ...showLikeCategory };
 			updatedLikeCategory[categoryType] = updatedLikeCategory[
@@ -48,7 +49,7 @@ const LikeCategoryList = ({
 			}
 
 			// Firestore からの削除
-			useRemoveCategoryLike(category, categoryType);
+			useRemoveCategoryLike(category);
 			setIsPopUp("removelike");
 		} catch (error) {
 			setErrorState(error.code);
@@ -89,7 +90,7 @@ const LikeCategoryList = ({
 											}}
 										>
 											<FontAwesomeIcon
-												className="app-category-icon "
+												className="app-category-icon app-category-icon-inactive"
 												icon={faTrash}
 											/>
 										</div>

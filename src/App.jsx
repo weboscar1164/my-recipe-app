@@ -29,6 +29,7 @@ const App = () => {
 	const [rankingList, setRankingList] = useState([]);
 	const [isOpen, setIsOpen] = useState(false);
 	const [firebaseInitialized, setFirebaseInitialized] = useState(false);
+	const [currentAutherLikeList, setCurrentAutherLikeList] = useState([]);
 
 	Modal.setAppElement("#root");
 
@@ -131,6 +132,8 @@ const App = () => {
 							path="/"
 							element={
 								<Home
+									currentAutherLikeList={currentAutherLikeList}
+									setCurrentAutherLikeList={setCurrentAutherLikeList}
 									rankingLoading={rankingLoading}
 									setRankingLoading={setRankingLoading}
 									searchWord={searchWord}
@@ -155,6 +158,8 @@ const App = () => {
 							path="/likes"
 							element={
 								<Likes
+									currentAutherLikeList={currentAutherLikeList}
+									setCurrentAutherLikeList={setCurrentAutherLikeList}
 									rankingLoading={rankingLoading}
 									setRankingLoading={setRankingLoading}
 									searchWord={searchWord}

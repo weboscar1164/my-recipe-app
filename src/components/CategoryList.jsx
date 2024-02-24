@@ -1,14 +1,14 @@
-/** @jsxImportSource @emotion/react */
 import { useEffect, useState } from "react";
 import "./CategoryList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase.config";
-import { styles } from "../utils/Styled";
+import { db, auth } from "../firebase.config";
+import { collection, onSnapshot } from "firebase/firestore";
 import { isEmpty } from "../utils/helpers";
 import {
 	getIsCategoryLike,
+	getCategoryLikeList,
 	useAddCategoryLike,
 	useRemoveCategoryLike,
 } from "../utils/useHandleData";
@@ -21,10 +21,13 @@ const CategoryList = ({
 	setCurrentCategory,
 	getRankingCategoryNumber,
 	handleOpenModal,
+	currentAutherLikeList,
+	setCurrentAutherLikeList,
 }) => {
 	const [isLike, setIsLike] = useState([]);
+	const [currentItem, setCurrentitem] = useState({});
 	const navigate = useNavigate();
-	const { isPopUp, setIsPopUp } = usePopUpContext();
+	const { setIsPopUp } = usePopUpContext();
 	const { setErrorState } = useErrorState();
 
 	useEffect(() => {
@@ -35,14 +38,52 @@ const CategoryList = ({
 					showCategory[categoryType].map(async (category) => ({
 						category,
 						categoryType,
-						isLike: await getIsCategoryLike(category, categoryType),
+						firebaseId: await getIsCategoryLike(
+							category,
+							categoryType,
+							currentAutherLikeList
+						),
 					}))
 				)
 			);
 			setIsLike(likes);
+			console.log(likes);
 		};
 		fetchData();
-	}, [showCategory, isPopUp, isLike]);
+		// console.log(currentAutherLikeList);
+		console.log(showCategory);
+	}, [showCategory, currentAutherLikeList]);
+
+	useEffect(() => {
+		// firebase内の更新を確認してからユーザーのお気に入りを更新する
+		const unsubscribe = onSnapshot(
+			collection(db, "likeCategory"),
+			async (snapshot) => {
+				// console.log("changed");
+				const fetchedData = await getCategoryLikeList();
+
+				setCurrentAutherLikeList(fetchedData);
+				console.log(fetchedData);
+			}
+		);
+		const currentItemFirebaseId = currentAutherLikeList.map((fetchedItem) => {
+			if (
+				fetchedItem.categoryType === currentItem.categoryType &&
+				fetchedItem.categoryId === currentItem.category.categoryId
+			) {
+				return fetchedItem.id;
+			}
+		});
+		setIsLike((prevIsLike) =>
+			prevIsLike.map((_item) =>
+				_item.categoryType === currentItem.categoryType &&
+				_item.category.categoryId === currentItem.category.categoryId
+					? { ..._item, firebaseId: currentItemFirebaseId }
+					: _item
+			)
+		);
+		return () => unsubscribe();
+	}, [currentItem]);
 
 	const onCategoryClickHandler = (category, categoryType) => {
 		// 楽天レシピランキングAPIのURL生成用カテゴリ番号を付与
@@ -55,30 +96,30 @@ const CategoryList = ({
 		setSearchWord("");
 	};
 
-	const onCategoryLikeHandler = async (category, categoryType) => {
+	const onCategoryLikeHandler = async (item) => {
+		setCurrentitem(item);
+		// お気に入り追加・削除の切り替え
 		if (!auth.currentUser) {
 			handleOpenModal();
 			return;
 		}
 
-		const updatedIsLike = !(await getIsCategoryLike(category, categoryType));
-		try {
-			if (updatedIsLike) {
-				setIsPopUp("addlike");
-				await useAddCategoryLike(category, categoryType);
-			} else {
-				setIsPopUp("removelike");
-				await useRemoveCategoryLike(category, categoryType);
-			}
+		let updatedIsLike;
+		if (item.firebaseId) {
+			updatedIsLike = item.firebaseId;
+		} else {
+			updatedIsLike = false;
+		}
 
-			setIsLike((prevIsLike) =>
-				prevIsLike.map((item) =>
-					item.categoryType === categoryType &&
-					item.category.categoryId === category.categoryId
-						? { ...item, isLike: updatedIsLike }
-						: item
-				)
-			);
+		console.log("clicked");
+		try {
+			if (!updatedIsLike) {
+				await useAddCategoryLike(item.category, item.categoryType);
+				setIsPopUp("addlike");
+			} else {
+				await useRemoveCategoryLike(item);
+				setIsPopUp("removelike");
+			}
 		} catch (error) {
 			setErrorState(error.code);
 			navigate("/error");
@@ -98,39 +139,38 @@ const CategoryList = ({
 				<>
 					<h2>カテゴリ一覧</h2>
 					<ul>
-						{Object.keys(showCategory).map((categoryType) => {
-							return showCategory[categoryType].map((category) => {
-								const likeData = isLike.find(
-									(item) =>
-										item.categoryType === categoryType &&
-										item.category.categoryId === category.categoryId
-								);
-								return (
-									<li className="app-category-card" key={category.categoryId}>
-										<h3
-											onClick={(e) => {
-												e.stopPropagation();
-												onCategoryClickHandler(category, categoryType);
-											}}
-										>
-											{category.categoryName}
-										</h3>
-										<div
-											className="app-category-like"
-											onClick={(e) => {
-												e.stopPropagation();
-												onCategoryLikeHandler(category, categoryType);
-											}}
-										>
-											<FontAwesomeIcon
-												className="app-category-icon "
-												css={[likeData?.isLike && styles.activeLike]}
-												icon={faStar}
-											/>
-										</div>
-									</li>
-								);
-							});
+						{isLike.map((item) => {
+							return (
+								<li
+									className="app-category-card"
+									key={item.category.categoryId}
+								>
+									<h3
+										onClick={(e) => {
+											e.stopPropagation();
+											onCategoryClickHandler(item.category, item.categoryType);
+										}}
+									>
+										{item.category.categoryName}
+									</h3>
+									<div
+										className="app-category-like"
+										onClick={(e) => {
+											e.stopPropagation();
+											onCategoryLikeHandler(item);
+										}}
+									>
+										<FontAwesomeIcon
+											className={`app-category-icon ${
+												item.firebaseId
+													? "app-category-icon-active"
+													: "app-category-icon-inactive"
+											}`}
+											icon={faStar}
+										/>
+									</div>
+								</li>
+							);
 						})}
 					</ul>
 				</>

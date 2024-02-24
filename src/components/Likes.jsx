@@ -25,10 +25,11 @@ const Likes = ({
 	getRankingCategoryNumber,
 	handleOpenModal,
 	rankingList,
+	currentAutherLikeList,
+	setCurrentAutherLikeList,
 }) => {
 	const [fetchedShowLikeCategory, setFetchedShowLikeCategory] = useState([]);
 	const [showLikeCategory, setShowLikeCategory] = useState([]);
-	const [currentAutherLikeList, setCurrentAutherLikeList] = useState([]);
 	const navigate = useNavigate();
 
 	const updateLikeData = async () => {
@@ -65,26 +66,55 @@ const Likes = ({
 				const filterObjects = (data, filterArray) => {
 					// allCategoryを用いてログイン中ユーザーのお気に入り一覧を抽出
 					const filteredData = { ...data };
+
 					for (const key in filteredData) {
-						if (Array.isArray(filteredData[key])) {
-							const filteredArray = filteredData[key].filter((obj) => {
-								return filterArray.some(
-									(filterObj) =>
-										filterObj.categoryId === obj.categoryId &&
-										filterObj.categoryType === key
-								);
+						const filteredArray = filteredData[key].filter((obj) => {
+							return filterArray.some((filterObj) => {
+								if (
+									filterObj.categoryId === obj.categoryId &&
+									filterObj.categoryType === key
+								) {
+									return true;
+								}
+								return false;
 							});
-							filteredData[key] = filteredArray;
-						} else if (typeof filteredData[key] === "object") {
-							filterObjects(filteredData[key], filterArray);
-						}
+						});
+						filteredData[key] = filteredArray;
 					}
 					return filteredData;
 				};
-				setFetchedShowLikeCategory(
-					filterObjects(allCategory, currentAutherLikeList)
+
+				const changeArrayAndAddId = (data, addArray) => {
+					const changedData = { ...data };
+					for (const key in changedData) {
+						changedData[key] = changedData[key].map((obj) => {
+							const matchngChangeObj = addArray.find((changeObj) => {
+								return (
+									changeObj.categoryId === obj.categoryId &&
+									changeObj.categoryType === key
+								);
+							});
+							if (matchngChangeObj) {
+								return {
+									...obj,
+									categoryType: key,
+									firebaseId: matchngChangeObj.id,
+								};
+							} else {
+								return obj;
+							}
+						});
+					}
+					return changedData;
+				};
+
+				const filteredData = filterObjects(allCategory, currentAutherLikeList);
+				const updatedData = changeArrayAndAddId(
+					filteredData,
+					currentAutherLikeList
 				);
-				setShowLikeCategory(fetchedShowLikeCategory);
+				setFetchedShowLikeCategory(updatedData);
+				setShowLikeCategory(updatedData);
 			} catch (error) {
 				console.error("Error fetching data:", error);
 			}
@@ -129,7 +159,6 @@ const Likes = ({
 					setCurrentCategory={setCurrentCategory}
 					getRankingCategoryNumber={getRankingCategoryNumber}
 					handleOpenModal={handleOpenModal}
-					updateLikeData={updateLikeData}
 				/>
 			) : (
 				<RankingList

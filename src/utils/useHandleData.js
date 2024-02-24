@@ -9,7 +9,6 @@ import {
 } from "firebase/firestore";
 import { db, auth } from "../firebase.config";
 import { v4 as uuidv4 } from "uuid";
-import { FirebaseError } from "firebase/app";
 
 // serchData
 export const useGetSerchCategory = (targetCategoryList, searchWord) => {
@@ -69,12 +68,11 @@ export const useAddCategoryLike = async (category, categoryType) => {
 	});
 };
 
-export const useRemoveCategoryLike = async (category, categoryType) => {
+export const useRemoveCategoryLike = async (category) => {
 	const q = query(
 		collection(db, "likeCategory"),
-		where("userId", "==", auth.currentUser.uid),
-		where("categoryId", "==", category.categoryId),
-		where("categoryType", "==", categoryType)
+
+		where("id", "==", category.firebaseId)
 	);
 	const querySnapshot = await getDocs(q);
 	querySnapshot.forEach((doc) => {
@@ -83,18 +81,20 @@ export const useRemoveCategoryLike = async (category, categoryType) => {
 	});
 };
 
-export const getIsCategoryLike = async (category, categoryType) => {
+export const getIsCategoryLike = async (category, categoryType, likeList) => {
 	if (!auth.currentUser) {
 		return false;
 	} else {
-		const q = query(
-			collection(db, "likeCategory"),
-			where("userId", "==", auth.currentUser.uid),
-			where("categoryId", "==", category.categoryId),
-			where("categoryType", "==", categoryType)
+		const foundObject = likeList.find(
+			(obj) =>
+				obj.categoryId === category.categoryId &&
+				obj.categoryType === categoryType
 		);
-		const querySnapshot = await getDocs(q);
-		return !querySnapshot.empty;
+		if (foundObject !== undefined) {
+			return foundObject.id;
+		} else {
+			return false;
+		}
 	}
 };
 

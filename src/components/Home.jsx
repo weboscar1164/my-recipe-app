@@ -5,7 +5,10 @@ import CategoryList from "./CategoryList";
 import RankingList from "./RankingList";
 
 import { isEmpty } from "../utils/helpers";
-import { useGetSerchCategory } from "../utils/useHandleData";
+import {
+	useGetSerchCategory,
+	getCategoryLikeList,
+} from "../utils/useHandleData";
 
 function Home({
 	rankingLoading,
@@ -22,10 +25,24 @@ function Home({
 	getRankingCategoryNumber,
 	handleOpenModal,
 	rankingList,
+	currentAutherLikeList,
+	setCurrentAutherLikeList,
 }) {
+	const updateLikeData = async () => {
+		try {
+			const fetchedData = await getCategoryLikeList();
+			setCurrentAutherLikeList(fetchedData);
+		} catch (error) {
+			console.error("Error fetching data:", error);
+			setErrorState(error.code);
+			navigate("/Error");
+		}
+	};
+
 	useEffect(() => {
-		// 初回レンダリング時にserchWordを空にする
+		// 初回レンダリング時にserchWordを空にして、お気に入り一覧を読み込む
 		setSearchWord("");
+		updateLikeData();
 	}, []);
 
 	useEffect(() => {
@@ -51,6 +68,8 @@ function Home({
 			/>
 			{isEmpty(currentCategory) ? (
 				<CategoryList
+					currentAutherLikeList={currentAutherLikeList}
+					setCurrentAutherLikeList={setCurrentAutherLikeList}
 					isOpen={isOpen}
 					isEmpty={isEmpty}
 					allCategory={allCategory}
