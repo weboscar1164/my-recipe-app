@@ -71,7 +71,6 @@ function Home({
 					currentAutherLikeList={currentAutherLikeList}
 					setCurrentAutherLikeList={setCurrentAutherLikeList}
 					isOpen={isOpen}
-					isEmpty={isEmpty}
 					allCategory={allCategory}
 					showCategory={showCategory}
 					setSearchWord={setSearchWord}
@@ -81,7 +80,6 @@ function Home({
 				/>
 			) : (
 				<RankingList
-					isEmpty={isEmpty}
 					rankingLoading={rankingLoading}
 					setSearchWord={setSearchWord}
 					currentCategory={currentCategory}

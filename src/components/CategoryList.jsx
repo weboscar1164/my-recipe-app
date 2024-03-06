@@ -55,11 +55,14 @@ const CategoryList = ({
 	}, [showCategory, currentAutherLikeList]);
 
 	useEffect(() => {
+		if (!auth.currentUser) {
+			return;
+		}
 		// firebase内の更新を確認してからユーザーのお気に入りを更新する
 		const unsubscribe = onSnapshot(
 			collection(db, "likeCategory"),
 			async (snapshot) => {
-				// console.log("changed");
+				console.log("changed");
 				const fetchedData = await getCategoryLikeList();
 
 				setCurrentAutherLikeList(fetchedData);
@@ -97,12 +100,12 @@ const CategoryList = ({
 	};
 
 	const onCategoryLikeHandler = async (item) => {
-		setCurrentitem(item);
 		// お気に入り追加・削除の切り替え
 		if (!auth.currentUser) {
 			handleOpenModal();
 			return;
 		}
+		setCurrentitem(item);
 
 		let updatedIsLike;
 		if (item.firebaseId) {

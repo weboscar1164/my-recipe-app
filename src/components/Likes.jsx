@@ -113,6 +113,7 @@ const Likes = ({
 					filteredData,
 					currentAutherLikeList
 				);
+				console.log(updatedData);
 				setFetchedShowLikeCategory(updatedData);
 				setShowLikeCategory(updatedData);
 			} catch (error) {

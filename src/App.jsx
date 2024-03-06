@@ -86,7 +86,7 @@ const App = () => {
 			}
 		};
 		fetchRankingData();
-	}, [currentCategory, setRankingLoading]);
+	}, [currentCategory]);
 
 	const getRankingCategoryNumber = (currentCategory, categoryType) => {
 		// 楽天ランキングAPIのURLに使用するカテゴリ番号を生成する
